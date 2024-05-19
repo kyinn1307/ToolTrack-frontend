@@ -524,7 +524,7 @@ body {
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  background-image: url(images/sample_image___calculator.png);
+  background-image: url(https://gi.esmplus.com/untteutmax/webprogramming/calculator.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -794,7 +794,7 @@ body {
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  background-image: url(images/sample_image___office.png);
+  background-image: url(https://gi.esmplus.com/untteutmax/webprogramming/office.jpeg);
   background-size: cover; /* 이미지가 div 내에 맞추어지고 전체가 보이도록 */
   background-position: center; /* 이미지를 중앙에 위치시킴 */
 }
@@ -814,7 +814,7 @@ body {
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  background-image: url(images/sample_image___student_room.png);
+  background-image: url(https://gi.esmplus.com/untteutmax/webprogramming/student%20room.jpeg);
   background-repeat: no-repeat;
   background-size: cover; /* 이미지가 div 내에 맞추어지고 전체가 보이도록 */
   background-position: center; /* 이미지를 중앙에 위치시킴 */
@@ -989,8 +989,6 @@ body {
 
 .e28_45 {
   overflow: hidden;
-}
-.e28_45 {
   background-color: rgba(255, 255, 255, 1);
   width: 1920px;
   height: 740px;
@@ -998,8 +996,6 @@ body {
 }
 .e28_46 {
   border: 1px solid rgba(0, 0, 0, 1);
-}
-.e28_46 {
   width: 78px;
   height: 37px;
   position: absolute;
@@ -1026,7 +1022,7 @@ body {
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  background-image: url(images/sample_image___earphone.png);
+  background-image: url(https://gi.esmplus.com/untteutmax/webprogramming/earphone.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -1046,7 +1042,7 @@ body {
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  background-image: url(images/sample_image___ruler.png);
+  background-image: url(https://gi.esmplus.com/untteutmax/webprogramming/ruler.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
 }
