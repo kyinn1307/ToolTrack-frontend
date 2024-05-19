@@ -1,5 +1,6 @@
-/* css for header part */
-
+body {
+  background: #e5e5e5;
+}
 /* header */
 .e1_4 {
   position: relative;
@@ -26,25 +27,18 @@
 }
 /* login group */
 .e1_8 {
+  box-sizing: border-box;
   font-weight: bold;
   position: absolute;
   width: 90px;
   height: 40px;
   left: 1810px;
-  top: 23px;
-  text-align: center;
-}
-.e1_9 {
-  /* Rectangle 1 */
-  box-sizing: border-box;
-  position: absolute;
-  width: 90px;
-  height: 40px;
-  left: 1810px;
   top: 15px;
-
+  text-align: center;
   border: 1px solid #000000;
   border-radius: 20px;
+  cursor: pointer;
+  background-color: #ffffff;
 }
 
 .e1_11 {
@@ -93,35 +87,27 @@
 }
 .e1_30 {
   color: rgba(0, 0, 0, 1);
-  width: 150px;
-  height: 37px;
+  width: 250px;
+  height: 40px;
   position: absolute;
-  left: 738px;
-  top: 465px;
   font-family: Kumbh Sans;
   text-align: center;
   font-size: 30px;
-  letter-spacing: 0;
+  background-color: #ffffff;
   cursor: pointer;
+  border: none;
 }
 .e1_31 {
   color: rgba(0, 0, 0, 1);
-  width: 276.6px;
-  height: 66.6px;
+  width: 250px;
+  height: 40px;
   position: absolute;
-  left: 970px;
-  top: 453px;
   font-family: Kumbh Sans;
   text-align: center;
   font-size: 30px;
-  letter-spacing: 0;
   background-color: #ffffff;
-  border: none;
-  border-top-left-radius: 40px;
-  border-top-right-radius: 40px;
-  border-bottom-left-radius: 40px;
-  border-bottom-right-radius: 40px;
   cursor: pointer;
+  border: none;
 }
 .e1_20 {
   width: 450px;
@@ -156,6 +142,7 @@
   font-size: 25px;
   letter-spacing: 0;
 }
+/* css for ID in login page */
 .e1_21 {
   background-color: rgba(
     217.0000022649765,
@@ -172,7 +159,27 @@
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
+  color: rgba(0, 0, 0, 0.8);
+
+  position: absolute;
+
+  text-align: center;
+  font-size: 30px;
+
+  font-family: "Kumbh Sans", sans-serif;
+
+  border: none;
 }
+
+.e1_21::placeholder {
+  color: rgba(0, 0, 0, 0.2); /* placeholder 텍스트 색상 */
+}
+
+.e1_21:focus {
+  outline: none; /* 활성화 시 테두리 제거 */
+  color: rgba(0, 0, 0, 1); /* 사용자 입력 시 텍스트 색상 */
+}
+
 .e1_26 {
   background-color: rgba(
     217.0000022649765,
@@ -189,11 +196,32 @@
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
+  color: rgba(0, 0, 0, 0.8);
+
+  position: absolute;
+
+  text-align: center;
+  font-size: 30px;
+
+  font-family: "Kumbh Sans", sans-serif;
+
+  border: none;
+}
+
+.e1_26::placeholder {
+  color: rgba(0, 0, 0, 0.2); /* placeholder 텍스트 색상 */
+}
+
+.e1_26:focus {
+  outline: none; /* 활성화 시 테두리 제거 */
+  color: rgba(0, 0, 0, 1); /* 사용자 입력 시 텍스트 색상 */
+  font-size: 30px;
 }
 .e1_27 {
-  border: 1px solid rgba(0, 0, 0, 1);
-}
-.e1_27 {
+  display: flex;
+  justify-content: center; /* 가로 가운데 정렬 */
+  align-items: center; /* 세로 가운데 정렬 */
+  border: 2px solid rgba(0, 0, 0, 1);
   width: 275px;
   height: 65px;
   position: absolute;
@@ -206,9 +234,10 @@
   cursor: pointer;
 }
 .e1_29 {
-  border: 1px solid rgba(0, 0, 0, 1);
-}
-.e1_29 {
+  display: flex;
+  justify-content: center; /* 가로 가운데 정렬 */
+  align-items: center; /* 세로 가운데 정렬 */
+  border: 2px solid rgba(0, 0, 0, 1);
   width: 275px;
   height: 65px;
   position: absolute;
@@ -284,72 +313,89 @@
   position: absolute;
   left: 478px;
   top: 220px;
-}
-.e28_15 {
   background-color: rgba(
     217.0000022649765,
     217.0000022649765,
     217.0000022649765,
     1
   );
-  width: 964px;
-  height: 65px;
-  position: absolute;
-  left: 0px;
-  top: 0px;
+
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
+/* Student number input in Sign Up page */
 .e28_8 {
-  color: rgba(0, 0, 0, 0.20000000298023224);
+  color: rgba(0, 0, 0, 0.8); /* 사용자 입력 텍스트 색상 */
   width: 300px;
   height: 37px;
   position: absolute;
   left: 340px;
   top: 14px;
-  font-family: Kumbh Sans;
+  font-family: "Kumbh Sans", sans-serif;
   text-align: center;
   font-size: 30px;
   letter-spacing: 0;
+  background-color: rgba(217, 217, 217, 1);
+  border: none;
 }
+
+.e28_8::placeholder {
+  color: rgba(0, 0, 0, 0.2); /* placeholder 텍스트 색상 */
+}
+
+.e28_8:focus {
+  outline: none; /* 활성화 시 테두리 제거 */
+  color: rgba(0, 0, 0, 1); /* 사용자 입력 시 텍스트 색상 */
+}
+
 .e28_24 {
+  display: flex;
+  justify-content: center; /* 가로 가운데 정렬 */
+  align-items: center; /* 세로 가운데 정렬 */
   width: 964px;
   height: 65px;
   position: absolute;
   left: 478px;
   top: 324px;
-}
-.e28_16 {
   background-color: rgba(
     217.0000022649765,
     217.0000022649765,
     217.0000022649765,
     1
   );
-  width: 964px;
-  height: 65px;
-  position: absolute;
-  left: 0px;
-  top: 0px;
+
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
+
 .e28_9 {
-  color: rgba(0, 0, 0, 0.20000000298023224);
-  width: 50.31315231323242px;
+  color: rgba(0, 0, 0, 0.8);
+  width: 400px;
   height: 37px;
   position: absolute;
-  left: 454px;
-  top: 14px;
-  font-family: Kumbh Sans;
+
   text-align: center;
   font-size: 30px;
+
+  font-family: "Kumbh Sans", sans-serif;
   letter-spacing: 0;
+  background-color: rgba(217, 217, 217, 1);
+  border: none;
 }
+
+.e28_9::placeholder {
+  color: rgba(0, 0, 0, 0.2); /* placeholder 텍스트 색상 */
+}
+
+.e28_9:focus {
+  outline: none; /* 활성화 시 테두리 제거 */
+  color: rgba(0, 0, 0, 1); /* 사용자 입력 시 텍스트 색상 */
+}
+
 .e28_23 {
   width: 275px;
   height: 65px;
@@ -384,77 +430,49 @@
   border-bottom-left-radius: 40px;
   border-bottom-right-radius: 40px;
 }
-.e28_26 {
-  width: 470px;
-  height: 65px;
-  position: absolute;
-  left: 972px;
-  top: 116px;
-}
-.e28_20 {
-  background-color: rgba(
-    217.0000022649765,
-    217.0000022649765,
-    217.0000022649765,
-    1
-  );
-  width: 470px;
-  height: 65px;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
-.e28_19 {
-  color: rgba(0, 0, 0, 0.20000000298023224);
-  width: 230px;
-  height: 37px;
-  position: absolute;
-  left: 120px;
-  top: 14px;
-  font-family: Kumbh Sans;
-  text-align: center;
-  font-size: 30px;
-  letter-spacing: 0;
-}
+
 .e28_27 {
   width: 964px;
   height: 65px;
+  display: flex;
+  justify-content: center; /* 가로 가운데 정렬 */
+  align-items: center; /* 세로 가운데 정렬 */
   position: absolute;
   left: 484px;
   top: 116px;
-}
-.e28_22 {
   background-color: rgba(
     217.0000022649765,
     217.0000022649765,
     217.0000022649765,
     1
   );
-  width: 964px;
-  height: 65px;
-  position: absolute;
-  left: 0px;
-  top: 0px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
+
+/* css for Username in Sign Up page */
 .e28_21 {
-  color: rgba(0, 0, 0, 0.20000000298023224);
-  width: 143px;
+  color: rgba(0, 0, 0, 0.8);
+  width: 400px;
   height: 37px;
   position: absolute;
-  left: 400px;
-  top: 12px;
-  font-family: Kumbh Sans;
   text-align: center;
   font-size: 30px;
+  font-family: "Kumbh Sans", sans-serif;
   letter-spacing: 0;
+  background-color: rgba(217, 217, 217, 1);
+  border: none;
+}
+
+.e28_21::placeholder {
+  color: rgba(0, 0, 0, 0.2); /* placeholder 텍스트 색상 */
+}
+
+.e28_21:focus {
+  outline: none; /* 활성화 시 테두리 제거 */
+  color: rgba(0, 0, 0, 1); /* 사용자 입력 시 텍스트 색상 */
 }
 .e28_31 {
   color: rgba(0, 0, 0, 1);
@@ -524,7 +542,7 @@
   top: 120px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;  
+  border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   background-image: url(https://gi.esmplus.com/untteutmax/webprogramming/blanket.jpeg);
   background-repeat: no-repeat;
@@ -705,18 +723,19 @@
   width: 10px;
   height: 10px;
   position: absolute;
-  left: 414px;
-  top: 127px;
+  left: 410px;
+  top: 126px;
 }
 .e32_85 {
-  /* Polygon 2 */
-  position: absolute;
-  width: 10px;
-  height: 10px;
+  /* Polygon 3 */
 
+  position: absolute;
+  width: 15px;
+  height: 15px;
   background: #000000;
   border-radius: 1px;
   transform: rotate(-90deg);
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
 }
 
 .e32_87 {

@@ -9,45 +9,50 @@
       href="https://fonts.googleapis.com/css?family=Kumbh+Sans&display=swap"
       rel="stylesheet"
     />
-
     <link rel="stylesheet" href="styles.css" />
-
-    <style>
-      /*
-                Figma Background for illustrative/preview purposes only.
-                You can remove this style tag with no consequence
-              */
-      body {
-        background: #e5e5e5;
-      }
-    </style>
+    <script src="login.js"></script>
   </head>
 
   <body>
     <div class="e1_4">
       <span class="e1_7">ITM <b>ToolTrack</b></span>
-      <div class="e1_10">
-        <div class="e1_9"></div>
-        <span class="e1_8">login</span>
-      </div>
-      <div class="e28_65"></div>
+      <button type="button" class="e1_8" id="login-button">login</button>
     </div>
+
     <div class="e1_11">
       <span class="e1_14">Welcome to ITM <b>ToolTrack</b> !</span
-      ><span class="e1_16">ID </span><span class="e1_17">PW </span
-      ><span class="e1_30">sign-up</span
-      ><button type="submit" class="e1_31">log-in</button>
+      ><span class="e1_16">ID </span><span class="e1_17">PW </span>
+      <div class="e1_27">
+        <button type="button" class="e1_30" id="sign-up-button">sign-up</button>
+      </div>
+      <div class="e1_29">
+        <input
+          type="submit"
+          class="e1_31"
+          id="login-form-submit"
+          value="log-in"
+        />
+      </div>
       <div class="e1_20">
         <div class="e1_18"></div>
         <span class="e1_19">only for ITM students</span>
       </div>
-      <div class="e1_21"></div>
-      <div class="e1_26"></div>
-      <div class="e1_27"></div>
-      <div class="e1_29"></div>
-      <div class="e28_67"></div>
-      <div class="e28_69"></div>
-      <div class="e28_73"></div>
+      <form class="e1_12" id="login-form">
+        <input
+          type="text"
+          class="e1_21"
+          name="ID"
+          placeholder="ID"
+          maxlength="8"
+        />
+        <input
+          type="password"
+          class="e1_26"
+          name="Password"
+          placeholder="PW"
+          maxlength="20"
+        />
+      </form>
     </div>
   </body>
 </html>
