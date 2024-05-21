@@ -1,6 +1,8 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign Up</title>
     <meta name="description" content="Figma htmlGenerator" />
     <meta name="author" content="htmlGenerator" />
@@ -8,41 +10,52 @@
       href="https://fonts.googleapis.com/css?family=Kumbh+Sans&display=swap"
       rel="stylesheet"
     />
-
-    <link rel="stylesheet" href="styles.css" />
-    <script src="signUp.js"></script>
+    <link rel="stylesheet" href="/css/SignUp.css" />
+    <script src="/javascript/SignUp.js"></script>
   </head>
-
   <body>
     <div class="e1_4">
-      <span class="e1_7">ITM <b>ToolTrack</b></span>
+      <span class="e1_7" id="main-button">ITM <b>ToolTrack</b></span>
       <button type="button" class="e1_8" id="login-button">login</button>
     </div>
 
     <div class="e28_6">
-      <div class="e28_25">
-        <input
-          type="text"
-          class="e28_8"
-          placeholder="Student number"
-          maxlength="8"
-        />
-      </div>
-      <div class="e28_24">
-        <input type="text" class="e28_9" placeholder="PW" maxlength="20" />
-      </div>
-      <div class="e28_23">
-        <span class="e28_10">sign-up</span>
-        <div class="e28_17"></div>
-      </div>
-      <div class="e28_27">
-        <input
-          type="text"
-          class="e28_21"
-          placeholder="Username"
-          maxlength="20"
-        />
-      </div>
+      <form id="signup-form" method="POST" action="/signup/">
+        <div class="e28_25">
+          <input
+            type="text"
+            id="studentId"
+            name="studentId"
+            class="e28_8"
+            placeholder="Student number"
+            maxlength="8"
+            required
+          />
+        </div>
+        <div class="e28_27">
+          <input
+            type="text"
+            id="username"
+            name="username"
+            class="e28_21"
+            placeholder="Username"
+            maxlength="20"
+            required
+          />
+        </div>
+        <div class="e28_24">
+          <input
+            type="password"
+            id="password"
+            name="password"
+            class="e28_9"
+            placeholder="PW"
+            maxlength="20"
+            required
+          />
+        </div>
+        <button type="submit" class="e28_23">Sign Up</button>
+      </form>
       <span class="e28_31">Sign up for ITM <b>ToolTrack</b> !</span>
     </div>
   </body>
