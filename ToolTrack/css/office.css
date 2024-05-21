@@ -1,0 +1,327 @@
+body {
+  background: #e5e5e5;
+}
+/* header */
+.e1_4 {
+  position: relative;
+  width: 1920px;
+  height: 70px;
+
+  background-color: #ffffff;
+}
+/* website name */
+.e1_7 {
+  position: absolute;
+  width: 198px;
+  height: 37px;
+  left: 20px;
+  top: 16px;
+  font-family: "Kumbh Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 37px;
+  color: #000000;
+  cursor: pointer;
+}
+/* login group */
+.e1_8 {
+  box-sizing: border-box;
+  font-weight: bold;
+  position: absolute;
+  width: 90px;
+  height: 40px;
+  left: 1810px;
+  top: 15px;
+  text-align: center;
+  border: 1px solid #000000;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: #ffffff;
+}
+
+/* main css in office.css */
+.e19_14 {
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 1);
+  width: 1920px;
+  height: 740px;
+  position: absolute;
+}
+.e19_15 {
+  border: 1px solid rgba(0, 0, 0, 1);
+  width: 78px;
+  height: 37px;
+  position: absolute;
+  left: 577px;
+  top: 557px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.e19_16 {
+  background-color: rgba(
+    217.0000022649765,
+    217.0000022649765,
+    217.0000022649765,
+    1
+  );
+  width: 373px;
+  height: 500px;
+  position: absolute;
+  left: 773px;
+  top: 120px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-image: url(https://gi.esmplus.com/untteutmax/webprogramming/calculator.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+.e19_17 {
+  background-color: rgba(
+    217.0000022649765,
+    217.0000022649765,
+    217.0000022649765,
+    1
+  );
+  width: 373px;
+  height: 500px;
+  position: absolute;
+  left: 1168px;
+  top: 120px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-image: url(https://gi.esmplus.com/untteutmax/webprogramming/blanket.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.e19_33,
+.e19_32 {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+.e19_16:hover .e19_33,
+.e19_17:hover .e19_32 {
+  display: block;
+}
+
+.e19_19 {
+  color: rgba(0, 0, 0, 1);
+  width: 350px;
+  height: 124px;
+  position: absolute;
+  left: 380px;
+  top: 185px;
+  text-align: left;
+  font-size: 50px;
+  letter-spacing: 0;
+}
+.e19_20 {
+  color: rgba(0, 0, 0, 1);
+  width: 289px;
+  height: 74px;
+  position: absolute;
+  left: 380px;
+  top: 349px;
+  text-align: left;
+  font-size: 30px;
+  letter-spacing: 0;
+}
+.e19_21 {
+  color: rgba(0, 0, 0, 1);
+  width: 300px;
+  height: 37px;
+  position: absolute;
+  left: 380px;
+  top: 510px;
+  font-family: Kumbh Sans;
+  text-align: left;
+  font-size: 30px;
+  letter-spacing: 0;
+}
+.e19_22 {
+  color: rgba(0, 0, 0, 1);
+  width: 135px;
+  height: 37px;
+  position: absolute;
+  left: 380px;
+  top: 557px;
+  font-family: Kumbh Sans;
+  text-align: left;
+  font-size: 30px;
+  letter-spacing: 0;
+}
+.e19_23 {
+  color: rgba(0, 0, 0, 1);
+  width: 35px;
+  height: 37px;
+  position: absolute;
+  left: 598px;
+  top: 557px;
+  font-family: Kumbh Sans;
+  text-align: left;
+  font-size: 30px;
+  letter-spacing: 0;
+}
+.e19_24 {
+  width: 150px;
+  height: 40px;
+  position: absolute;
+  left: 977px;
+  top: 557px;
+}
+.e19_25 {
+  width: 150px;
+  height: 40px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+.e19_26 {
+  background-color: rgba(
+    190.0000038743019,
+    177.0000046491623,
+    168.0000051856041,
+    0.800000011920929
+  );
+  width: 150px;
+  height: 40px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.e19_27 {
+  color: rgba(255, 255, 255, 1);
+  width: 90px;
+  height: 25px;
+  position: absolute;
+  left: 30px;
+  top: 8px;
+  font-family: Kumbh Sans;
+  text-align: center;
+  font-size: 20px;
+  letter-spacing: 0;
+}
+.e19_28 {
+  width: 150px;
+  height: 40px;
+  position: absolute;
+  left: 1371px;
+  top: 557px;
+}
+.e19_29 {
+  width: 150px;
+  height: 40px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+.e19_30 {
+  background-color: rgba(
+    106.00000128149986,
+    75.00000312924385,
+    46.000001057982445,
+    0.800000011920929
+  );
+  width: 150px;
+  height: 40px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.e19_31 {
+  color: rgba(255, 255, 255, 1);
+  width: 70px;
+  height: 25px;
+  position: absolute;
+  left: 40px;
+  top: 8px;
+  font-family: Kumbh Sans;
+  text-align: center;
+  font-size: 20px;
+  letter-spacing: 0;
+}
+
+.e19_32 {
+  display: none;
+  background-color: rgba(
+    9.36328087002039,
+    9.315428137779236,
+    9.315428137779236,
+    0.800000011920929
+  );
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.e19_33 {
+  display: none;
+  background-color: rgba(
+    9.36328087002039,
+    9.315428137779236,
+    9.315428137779236,
+    0.800000011920929
+  );
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.e32_85 {
+  /* Polygon 3 */
+  width: 15px;
+  height: 15px;
+  background: #000000;
+  border-radius: 1px;
+  transform: rotate(-90deg);
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+  position: absolute; /* 자식 div를 절대 위치로 설정 */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg); /* 중앙에 배치하고 회전 유지 */
+}
+
+.e32_87 {
+  border: 1px solid rgba(0, 0, 0, 1);
+  width: 78px;
+  height: 25px;
+  position: absolute;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  left: 380px;
+  top: 120px;
+  cursor: pointer;
+}
