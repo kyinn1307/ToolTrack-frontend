@@ -5,11 +5,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const studentRoomButton = document.getElementById("student-room-button");
 
   loginButton.addEventListener("click", () => {
-    window.location.href = "login.html";
+    window.location.href = "../login/login.html";
   });
   // in the case of click main button 'ITM ToolTrack' in header area
   mainButton.addEventListener("click", () => {
-    window.location.href = "roomSelection.html";
+    window.location.href = "../roomSelection/roomSelection.html";
   });
 
   // Add event listeners for hover effect
@@ -31,10 +31,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Add event listeners for click actions
   officeButton.addEventListener("click", () => {
-    window.location.href = "office.html";
+    window.location.href = "../office/office.html";
   });
 
   studentRoomButton.addEventListener("click", () => {
-    window.location.href = "studentRoom.html";
+    window.location.href = "../studentRoom/studentRoom.html";
   });
 });
