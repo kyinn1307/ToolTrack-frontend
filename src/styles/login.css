@@ -1,0 +1,247 @@
+body {
+  background: #e5e5e5;
+}
+/* header */
+.e1_4 {
+  position: relative;
+  width: 1920px;
+  height: 70px;
+
+  background-color: #ffffff;
+}
+/* website name */
+.e1_7 {
+  position: absolute;
+  width: 198px;
+  height: 37px;
+  left: 20px;
+  top: 16px;
+  font-family: "Kumbh Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 37px;
+  color: #000000;
+  cursor: pointer;
+}
+/* login group */
+.e1_8 {
+  box-sizing: border-box;
+  font-weight: bold;
+  position: absolute;
+  width: 90px;
+  height: 40px;
+  left: 1810px;
+  top: 15px;
+  text-align: center;
+  border: 1px solid #000000;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: #ffffff;
+}
+
+/* main css in login.css */
+.e1_11 {
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 1);
+  width: 1920px;
+  height: 580px;
+  position: absolute;
+}
+.e1_14 {
+  color: rgba(0, 0, 0, 1);
+  width: 700px;
+  height: 60px;
+  position: absolute;
+  left: 618px;
+  top: 120px;
+  text-align: center;
+  font-size: 50px;
+  letter-spacing: 0;
+}
+.e1_16 {
+  color: rgba(0, 0, 0, 1);
+  width: 100px;
+  height: 65px;
+  position: absolute;
+  left: 478px;
+  top: 220px;
+  font-family: Kumbh Sans;
+  text-align: left;
+  font-size: 50px;
+  letter-spacing: 0;
+}
+.e1_17 {
+  color: rgba(0, 0, 0, 1);
+  width: 150px;
+  height: 65px;
+  position: absolute;
+  left: 478px;
+  top: 324px;
+  font-family: Kumbh Sans;
+  text-align: left;
+  font-size: 50px;
+  letter-spacing: 0;
+}
+.e1_30 {
+  color: rgba(0, 0, 0, 1);
+  width: 250px;
+  height: 40px;
+  position: absolute;
+  font-family: Kumbh Sans;
+  text-align: center;
+  font-size: 30px;
+  background-color: #ffffff;
+  cursor: pointer;
+  border: none;
+}
+.e1_31 {
+  color: rgba(0, 0, 0, 1);
+  width: 250px;
+  height: 40px;
+  position: absolute;
+  font-family: Kumbh Sans;
+  text-align: center;
+  font-size: 30px;
+  background-color: #ffffff;
+  cursor: pointer;
+  border: none;
+}
+.e1_20 {
+  width: 450px;
+  height: 50px;
+  position: absolute;
+  left: 735px;
+  top: 42px;
+}
+.e1_18 {
+  border: 1px solid rgba(0, 0, 0, 1);
+  width: 450px;
+  height: 50px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+.e1_19 {
+  color: rgba(0, 0, 0, 1);
+  width: 300px;
+  height: 31px;
+  position: relative;
+  left: 104px;
+  top: 9px;
+  font-family: Kumbh Sans;
+  text-align: center;
+  font-size: 25px;
+  letter-spacing: 0;
+}
+/* css for ID in login page */
+.e1_21 {
+  background-color: rgba(
+    217.0000022649765,
+    217.0000022649765,
+    217.0000022649765,
+    1
+  );
+  width: 767px;
+  height: 65px;
+  position: absolute;
+  left: 675px;
+  top: 220px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  color: rgba(0, 0, 0, 0.8);
+
+  position: absolute;
+
+  text-align: center;
+  font-size: 30px;
+
+  font-family: "Kumbh Sans", sans-serif;
+
+  border: none;
+}
+
+.e1_21::placeholder {
+  color: rgba(0, 0, 0, 0.2); /* placeholder 텍스트 색상 */
+}
+
+.e1_21:focus {
+  outline: none; /* 활성화 시 테두리 제거 */
+  color: rgba(0, 0, 0, 1); /* 사용자 입력 시 텍스트 색상 */
+}
+
+.e1_26 {
+  background-color: rgba(
+    217.0000022649765,
+    217.0000022649765,
+    217.0000022649765,
+    1
+  );
+  width: 767px;
+  height: 65px;
+  position: absolute;
+  left: 675px;
+  top: 324px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  color: rgba(0, 0, 0, 0.8);
+
+  position: absolute;
+
+  text-align: center;
+  font-size: 30px;
+
+  font-family: "Kumbh Sans", sans-serif;
+
+  border: none;
+}
+
+.e1_26::placeholder {
+  color: rgba(0, 0, 0, 0.2); /* placeholder 텍스트 색상 */
+}
+
+.e1_26:focus {
+  outline: none; /* 활성화 시 테두리 제거 */
+  color: rgba(0, 0, 0, 1); /* 사용자 입력 시 텍스트 색상 */
+  font-size: 30px;
+}
+.e1_27 {
+  display: flex;
+  justify-content: center; /* 가로 가운데 정렬 */
+  align-items: center; /* 세로 가운데 정렬 */
+  border: 2px solid rgba(0, 0, 0, 1);
+  width: 275px;
+  height: 65px;
+  position: absolute;
+  left: 675px;
+  top: 455px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  cursor: pointer;
+}
+.e1_29 {
+  display: flex;
+  justify-content: center; /* 가로 가운데 정렬 */
+  align-items: center; /* 세로 가운데 정렬 */
+  border: 2px solid rgba(0, 0, 0, 1);
+  width: 275px;
+  height: 65px;
+  position: absolute;
+  left: 970px;
+  top: 455px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  cursor: pointer;
+}
