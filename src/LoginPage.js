@@ -13,6 +13,10 @@ const LoginPage = () => {
     };
   }, []);
 
+  const handleSignUpClick = () => {
+    window.location.href = "/SignUp.html"; // SignUp 페이지로 이동합니다.
+  };
+
   return (
     <div>
       <div className="e1_4">
@@ -26,12 +30,17 @@ const LoginPage = () => {
 
       <div className="e1_11">
         <span className="e1_14">
-          Welcome to ITM <b>ToolTrack</b> !
+          Welcome to ITM <b>ToolTrack</b>!
         </span>
         <span className="e1_16">ID </span>
         <span className="e1_17">PW </span>
         <div className="e1_27">
-          <button type="button" className="e1_30" id="sign-up-button">
+          <button
+            type="button"
+            className="e1_30"
+            id="sign-up-button"
+            onClick={handleSignUpClick} // SignUp 버튼 클릭 시 이벤트 핸들러를 호출합니다.
+          >
             sign-up
           </button>
         </div>

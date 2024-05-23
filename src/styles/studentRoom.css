@@ -1,0 +1,285 @@
+body {
+  background: #e5e5e5;
+}
+/* header */
+.e1_4 {
+  position: relative;
+  width: 1920px;
+  height: 70px;
+
+  background-color: #ffffff;
+}
+/* website name */
+.e1_7 {
+  position: absolute;
+  width: 198px;
+  height: 37px;
+  left: 20px;
+  top: 16px;
+  font-family: "Kumbh Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 37px;
+  cursor: pointer;
+  color: #000000;
+}
+/* login group */
+.e1_8 {
+  box-sizing: border-box;
+  font-weight: bold;
+  position: absolute;
+  width: 90px;
+  height: 40px;
+  left: 1810px;
+  top: 15px;
+  text-align: center;
+  border: 1px solid #000000;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: #ffffff;
+}
+/* main css in student room.css */
+.e28_45 {
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 1);
+  width: 1920px;
+  height: 740px;
+  position: absolute;
+}
+.e28_46 {
+  border: 1px solid rgba(0, 0, 0, 1);
+  width: 78px;
+  height: 37px;
+  position: absolute;
+  left: 577px;
+  top: 557px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.e28_47 {
+  background-color: rgba(
+    217.0000022649765,
+    217.0000022649765,
+    217.0000022649765,
+    1
+  );
+  width: 373px;
+  height: 500px;
+  position: absolute;
+  left: 773px;
+  top: 120px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-image: url(https://gi.esmplus.com/untteutmax/webprogramming/earphone.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.e28_48 {
+  background-color: rgba(
+    217.0000022649765,
+    217.0000022649765,
+    217.0000022649765,
+    1
+  );
+  width: 373px;
+  height: 500px;
+  position: absolute;
+  left: 1168px;
+  top: 120px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-image: url(https://gi.esmplus.com/untteutmax/webprogramming/ruler.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.e28_50 {
+  color: rgba(0, 0, 0, 1);
+  width: 350px;
+  height: 124px;
+  position: absolute;
+  left: 380px;
+  top: 185px;
+  text-align: left;
+  font-size: 50px;
+  letter-spacing: 0;
+}
+.e28_51 {
+  color: rgba(0, 0, 0, 1);
+  width: 333px;
+  height: 74px;
+  position: absolute;
+  left: 380px;
+  top: 349px;
+  text-align: left;
+  font-size: 30px;
+  letter-spacing: 0;
+}
+.e28_52 {
+  color: rgba(0, 0, 0, 1);
+  width: 500px;
+  height: 37px;
+  position: absolute;
+  left: 380px;
+  top: 512px;
+  font-family: Kumbh Sans;
+  text-align: left;
+  font-size: 30px;
+  letter-spacing: 0;
+}
+
+.e28_53 {
+  color: rgba(0, 0, 0, 1);
+  width: 135px;
+  height: 37px;
+  position: absolute;
+  left: 380px;
+  top: 557px;
+  font-family: Kumbh Sans;
+  text-align: left;
+  font-size: 30px;
+  letter-spacing: 0;
+}
+.e28_54 {
+  color: rgba(0, 0, 0, 1);
+  width: 30px;
+  height: 37px;
+  position: absolute;
+  left: 601px;
+  top: 557px;
+  font-family: Kumbh Sans;
+  text-align: left;
+  font-size: 30px;
+  letter-spacing: 0;
+}
+.e28_55 {
+  width: 150px;
+  height: 40px;
+  position: absolute;
+  left: 977px;
+  top: 557px;
+}
+.e28_56 {
+  width: 150px;
+  height: 40px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+.e28_57 {
+  background-color: rgba(
+    165.00000536441803,
+    165.00000536441803,
+    165.00000536441803,
+    0.800000011920929
+  );
+  width: 150px;
+  height: 40px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.e28_58 {
+  color: rgba(255, 255, 255, 1);
+  width: 90px;
+  height: 25px;
+  position: absolute;
+  left: 30px;
+  top: 8px;
+  font-family: Kumbh Sans;
+  text-align: center;
+  font-size: 20px;
+  letter-spacing: 0;
+}
+.e28_59 {
+  width: 150px;
+  height: 40px;
+  position: absolute;
+  left: 1371px;
+  top: 557px;
+}
+.e28_60 {
+  width: 150px;
+  height: 40px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+.e28_61 {
+  background-color: rgba(
+    247.00000047683716,
+    195.0000035762787,
+    55.00000052154064,
+    0.800000011920929
+  );
+  width: 150px;
+  height: 40px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.e28_62 {
+  color: rgba(255, 255, 255, 1);
+  width: 44px;
+  height: 25px;
+  position: absolute;
+  left: 53px;
+  top: 8px;
+  font-family: Kumbh Sans;
+  text-align: center;
+  font-size: 20px;
+  letter-spacing: 0;
+}
+
+/* layer of selection button of ruler */
+.e28_63 {
+  background-color: rgba(
+    9.36328087002039,
+    9.315428137779236,
+    9.315428137779236,
+    0.800000011920929
+  );
+  width: 373px;
+  height: 500px;
+  position: absolute;
+  left: 1168px;
+  top: 120px;
+  border-radius: 20px;
+}
+
+.e32_101 {
+  position: absolute; /* 부모 div를 상대 위치로 설정 */
+  width: 78px;
+  height: 25px;
+  left: 380px;
+  top: 120px;
+  border: 1px solid rgba(0, 0, 0, 1);
+  border-radius: 40px;
+  cursor: pointer;
+}
+
+.e32_104 {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: #000000;
+  border-radius: 1px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+}
