@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <meta name="description" content="Figma htmlGenerator" />
+    <meta name="author" content="htmlGenerator" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Kumbh+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/SignUp/SignUp.css" />
+    <script src="/SignUp/SignUp.js"></script>
+  </head>
+  <body>
+    <div class="e1_4">
+      <span class="e1_7" id="main-button">ITM <b>ToolTrack</b></span>
+      <button type="button" class="e1_8" id="login-button">login</button>
+    </div>
+
+    <div class="e28_6">
+      <form id="signup-form" method="POST" action="/signup/">
+        <div class="e28_25">
+          <input
+            type="text"
+            id="studentId"
+            name="studentId"
+            class="e28_8"
+            placeholder="Student number"
+            maxlength="8"
+            required
+          />
+        </div>
+        <div class="e28_27">
+          <input
+            type="text"
+            id="username"
+            name="username"
+            class="e28_21"
+            placeholder="Username"
+            maxlength="20"
+            required
+          />
+        </div>
+        <div class="e28_24">
+          <input
+            type="password"
+            id="password"
+            name="password"
+            class="e28_9"
+            placeholder="PW"
+            maxlength="20"
+            required
+          />
+        </div>
+        <button type="submit" class="e28_23">Sign Up</button>
+      </form>
+      <span class="e28_31">Sign up for ITM <b>ToolTrack</b> !</span>
+    </div>
+  </body>
+</html>
