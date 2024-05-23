@@ -1,12 +1,18 @@
 import React from "react";
-import LoginPage from "./LoginPage"; // LoginPage 컴포넌트를 불러옵니다.
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import LoginPage from "./LoginPage";
+import SignUpPage from "./SignUpPage"; // Make sure you have this component
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <LoginPage /> {/* LoginPage 컴포넌트를 렌더링합니다. */}
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/signup" element={<SignUpPage />} />
+        {/* Add other routes as needed */}
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;

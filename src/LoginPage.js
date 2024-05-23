@@ -1,7 +1,10 @@
 import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "../src/styles/login.css";
 
 const LoginPage = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     const script = document.createElement("script");
     script.src = `${process.env.PUBLIC_URL}/js/login.js`;
@@ -14,7 +17,7 @@ const LoginPage = () => {
   }, []);
 
   const handleSignUpClick = () => {
-    window.location.href = "/SignUp.html"; // SignUp 페이지로 이동합니다.
+    navigate("/signup"); // Use navigate to change the route
   };
 
   return (
@@ -39,7 +42,7 @@ const LoginPage = () => {
             type="button"
             className="e1_30"
             id="sign-up-button"
-            onClick={handleSignUpClick} // SignUp 버튼 클릭 시 이벤트 핸들러를 호출합니다.
+            onClick={handleSignUpClick}
           >
             sign-up
           </button>

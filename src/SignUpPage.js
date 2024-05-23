@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import "../src/styles/SignUp.css";
-import signUpScript from "./SignUpScript"; // 수정된 JavaScript 파일을 불러옵니다.
+//import signUpScript from "./SignUpScript"; // 수정된 JavaScript 파일을 불러옵니다.
 
 const SignUpPage = () => {
   useEffect(() => {
-    signUpScript(); // JavaScript 로직을 호출합니다.
+    //signUpScript(); // JavaScript 로직을 호출합니다.
   }, []);
 
   return (
