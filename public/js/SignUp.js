@@ -1,87 +1,104 @@
-// SignUp.js
+import React, { useState } from "react";
+import "../src/styles/SignUp.css";
 
-document.addEventListener("DOMContentLoaded", () => {
-  const signUpButton = document.querySelector(".e28_23");
-  const loginButton = document.getElementById("login-button");
-  const mainButton = document.getElementById("main-button");
+const SignUpPage = () => {
+  const [studentId, setStudentId] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
-  // Convert to login page with login button in header
-  loginButton.addEventListener("click", () => {
-    window.location.href = "../login/login.html";
-  });
+  const handleSignUp = async (e) => {
+    e.preventDefault();
 
-  // Convert to login page with main button in header
-  mainButton.addEventListener("click", () => {
-    window.location.href = "../login/login.html";
-  });
-
-  signUpButton.addEventListener("click", (event) => {
-    event.preventDefault(); // Prevent the default form submission
-
-    const studentIdInput = document.getElementById("studentId");
-    const usernameInput = document.getElementById("username");
-    const passwordInput = document.getElementById("password");
-
-    const studentId = studentIdInput.value;
-    const username = usernameInput.value;
-    const password = passwordInput.value;
-
-    // Check whether each field is empty
-    if (studentId === "" || username === "" || password === "") {
-      alert("Please fill in all fields.");
-      return;
-    }
-
-    // Check whether the length of studentID
-    if (studentId.length !== 8) {
-      alert("Student number must be 8 digits.");
-      return;
-    }
-
-    // Create user data in JSON format
-    const userData = {
-      studentId: studentId,
-      username: username,
-      password: password,
+    const data = {
+      studentId,
+      username,
+      password,
     };
 
-    // Send user data to the server
-    fetch("/signup/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "X-CSRFToken": getCookie("csrftoken"),
-      },
-      body: JSON.stringify(userData),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.success) {
-          alert("Sign up complete!");
-          window.location.href = "../login/login.html";
-        } else {
-          alert(data.message);
-        }
-      })
-      .catch((error) => {
-        console.error("Error:", error);
+    try {
+      const response = await fetch("http://localhost:8000/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
       });
-  });
-});
 
-// Function to get the CSRF token from the cookie
-function getCookie(name) {
-  let cookieValue = null;
-  if (document.cookie && document.cookie !== "") {
-    const cookies = document.cookie.split(";");
-    for (let i = 0; i < cookies.length; i++) {
-      const cookie = cookies[i].trim();
-      // Does this cookie string begin with the name we want?
-      if (cookie.substring(0, name.length + 1) === name + "=") {
-        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-        break;
+      if (response.ok) {
+        const result = await response.json();
+        console.log("Sign up successful:", result);
+        // Handle successful signup (e.g., redirect to login page)
+      } else {
+        console.error("Sign up failed:", response.statusText);
+        // Handle signup failure
       }
+    } catch (error) {
+      console.error("Error during sign up:", error);
     }
-  }
-  return cookieValue;
-}
+  };
+
+  return (
+    <div>
+      <div className="e1_4">
+        <span className="e1_7" id="main-button">
+          ITM <b>ToolTrack</b>
+        </span>
+        <button type="button" className="e1_8" id="login-button">
+          login
+        </button>
+      </div>
+
+      <div className="e28_6">
+        <form id="signup-form" onSubmit={handleSignUp}>
+          <div className="e28_25">
+            <input
+              type="text"
+              id="studentId"
+              name="studentId"
+              className="e28_8"
+              placeholder="Student number"
+              maxLength="8"
+              required
+              value={studentId}
+              onChange={(e) => setStudentId(e.target.value)}
+            />
+          </div>
+          <div className="e28_27">
+            <input
+              type="text"
+              id="username"
+              name="username"
+              className="e28_21"
+              placeholder="Username"
+              maxLength="20"
+              required
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </div>
+          <div className="e28_24">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              className="e28_9"
+              placeholder="PW"
+              maxLength="20"
+              required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <button type="submit" className="e28_23">
+            Sign Up
+          </button>
+        </form>
+        <span className="e28_31">
+          Sign up for ITM <b>ToolTrack</b>!
+        </span>
+      </div>
+    </div>
+  );
+};
+
+export default SignUpPage;

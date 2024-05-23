@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     // 사용자 정보를 서버로 전송
-    fetch("/SignUp/", {
+    fetch("/signup/", {
       // 수정: 회원가입 URL로 변경
       method: "POST",
       headers: {
