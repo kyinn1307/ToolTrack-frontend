@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   // in the case of click sign-up button
   signUpButton.addEventListener("click", () => {
-    window.location.href = "signUp.html";
+    window.location.href = "../SignUp/SignUp.html";
   });
   // in the case of click login button in header area
   loginButton.addEventListener("click", () => {

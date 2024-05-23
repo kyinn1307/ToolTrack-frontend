@@ -8,14 +8,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // in the case of click login button in header area
   loginButton.addEventListener("click", () => {
-    window.location.href = "login.html";
+    window.location.href = "../login/login.html";
   });
   // in the case of click main button 'ITM ToolTrack' in header area
   mainButton.addEventListener("click", () => {
-    window.location.href = "roomSelection.html";
+    window.location.href = "../roomSelection/roomSelection.html";
   });
   // in the case of click back button in borrow page
   bakButtonBorrowPage.addEventListener("click", () => {
-    window.location.href = "office.html";
+    window.location.href = "../office/office.html";
   });
 });

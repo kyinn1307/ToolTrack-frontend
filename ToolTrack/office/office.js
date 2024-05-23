@@ -5,17 +5,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const calculatorBox = document.getElementById("calculator-box");
 
   loginButton.addEventListener("click", () => {
-    window.location.href = "login.html";
+    window.location.href = "../login/login.html";
   });
   // in the case of click main button 'ITM ToolTrack' in header area
   mainButton.addEventListener("click", () => {
-    window.location.href = "roomSelection.html";
+    window.location.href = "../roomSelection/roomSelection.html";
   });
   // the case of click back button in office page
   backButton.addEventListener("click", () => {
-    window.location.href = "roomSelection.html";
+    window.location.href = "../roomSelection/roomSelection.html";
   });
   calculatorBox.addEventListener("click", () => {
-    window.location.href = "borrowing.html";
+    window.location.href = "../borrowing/borrowing.html";
   });
 });

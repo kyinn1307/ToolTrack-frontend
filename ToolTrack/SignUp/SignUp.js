@@ -5,11 +5,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // convert to login page with login button in header
   loginButton.addEventListener("click", () => {
-    window.location.href = "login.html";
+    window.location.href = "../login/login.html";
   });
   // convert to login page with main button in header
   mainButton.addEventListener("click", () => {
-    window.location.href = "login.html";
+    window.location.href = "../login/login.html";
   });
 
   signUpButton.addEventListener("click", () => {
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .then((data) => {
         if (data.success) {
           alert("Sign up complete!");
-          window.location.href = "login.html";
+          window.location.href = "../login/login.html";
         } else {
           alert(data.message);
         }

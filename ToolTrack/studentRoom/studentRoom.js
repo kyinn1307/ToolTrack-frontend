@@ -6,14 +6,14 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   loginButton.addEventListener("click", () => {
-    window.location.href = "login.html";
+    window.location.href = "../login/login.html";
   });
   // in the case of click main button 'ITM ToolTrack' in header area
   mainButton.addEventListener("click", () => {
-    window.location.href = "roomSelection.html";
+    window.location.href = "../roomSelection/roomSelection.html";
   });
   // in the case of click main button 'ITM ToolTrack' in header area
   backButtonStudentRoom.addEventListener("click", () => {
-    window.location.href = "roomSelection.html";
+    window.location.href = "../roomSelection/roomSelection.html";
   });
 });
