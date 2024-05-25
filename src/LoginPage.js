@@ -57,7 +57,7 @@ const LoginPage = () => {
           const result = await response.json();
           console.log("Login successful:", result);
           // Handle successful login (e.g., redirect to dashboard)
-          navigate("/roomselection"); // 예시로 dashboard 페이지로 리디렉션
+          navigate("/roomselection"); // navigate to room selection page
         } else {
           console.error("Login failed:", response.statusText);
           alert("Login failed. Please check your credentials and try again.");
@@ -65,6 +65,7 @@ const LoginPage = () => {
       } catch (error) {
         console.error("Error during login:", error);
         alert("An error occurred during login. Please try again later.");
+        navigate("/roomselection"); // the part that has to remove
       }
     }
   };
