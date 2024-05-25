@@ -1,11 +1,41 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import "../src/styles/SignUp.css";
-import signUpScript from "./SignUpScript"; // 수정된 JavaScript 파일을 불러옵니다.
 
 const SignUpPage = () => {
-  useEffect(() => {
-    signUpScript(); // JavaScript 로직을 호출합니다.
-  }, []);
+  const [studentId, setStudentId] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSignUp = async (e) => {
+    e.preventDefault();
+
+    const data = {
+      studentId,
+      username,
+      password,
+    };
+
+    try {
+      const response = await fetch("http://localhost:8000/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        console.log("Sign up successful:", result);
+        // Handle successful signup (e.g., redirect to login page)
+      } else {
+        console.error("Sign up failed:", response.statusText);
+        // Handle signup failure
+      }
+    } catch (error) {
+      console.error("Error during sign up:", error);
+    }
+  };
 
   return (
     <div>
@@ -19,7 +49,7 @@ const SignUpPage = () => {
       </div>
 
       <div className="e28_6">
-        <form id="signup-form" method="POST" action="/signup/">
+        <form id="signup-form" onSubmit={handleSignUp}>
           <div className="e28_25">
             <input
               type="text"
@@ -29,6 +59,8 @@ const SignUpPage = () => {
               placeholder="Student number"
               maxLength="8"
               required
+              value={studentId}
+              onChange={(e) => setStudentId(e.target.value)}
             />
           </div>
           <div className="e28_27">
@@ -40,6 +72,8 @@ const SignUpPage = () => {
               placeholder="Username"
               maxLength="20"
               required
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
             />
           </div>
           <div className="e28_24">
@@ -51,6 +85,8 @@ const SignUpPage = () => {
               placeholder="PW"
               maxLength="20"
               required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
           <button type="submit" className="e28_23">
