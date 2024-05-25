@@ -1,7 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../src/styles/login.css";
 
 const LoginPage = () => {
+  const [studentId, setStudentId] = useState("");
+  const [password, setPassword] = useState("");
+
+  const navigate = useNavigate();
+
   useEffect(() => {
     const script = document.createElement("script");
     script.src = `${process.env.PUBLIC_URL}/js/login.js`;
@@ -14,7 +20,53 @@ const LoginPage = () => {
   }, []);
 
   const handleSignUpClick = () => {
-    window.location.href = "/SignUp.html"; // SignUp 페이지로 이동합니다.
+    navigate("/signup"); // Use navigate to change the route
+  };
+
+  const handleLoginClick = async (e) => {
+    // change the declaration of function as async
+    e.preventDefault();
+    const idInput = document.querySelector("input[name='ID']");
+    const pwInput = document.querySelector("input[name='Password']");
+    const idValue = idInput.value.trim();
+    const pwValue = pwInput.value.trim();
+
+    if (!idValue && !pwValue) {
+      alert("Please enter both Student Number and Password.");
+    } else if (!idValue) {
+      alert("Please enter your Student Number (8 digits).");
+    } else if (idValue.length !== 8) {
+      alert("Student Number must be 8 digits.");
+    } else if (!pwValue) {
+      alert("Please enter your Password.");
+    } else {
+      // Add the code to handle successful login
+      // make a request to backend
+      const data = { studentId: idValue, password: pwValue };
+
+      try {
+        const response = await fetch("http://localhost:8000/login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        });
+
+        if (response.ok) {
+          const result = await response.json();
+          console.log("Login successful:", result);
+          // Handle successful login (e.g., redirect to dashboard)
+          navigate("/roomselection"); // 예시로 dashboard 페이지로 리디렉션
+        } else {
+          console.error("Login failed:", response.statusText);
+          alert("Login failed. Please check your credentials and try again.");
+        }
+      } catch (error) {
+        console.error("Error during login:", error);
+        alert("An error occurred during login. Please try again later.");
+      }
+    }
   };
 
   return (
@@ -39,7 +91,7 @@ const LoginPage = () => {
             type="button"
             className="e1_30"
             id="sign-up-button"
-            onClick={handleSignUpClick} // SignUp 버튼 클릭 시 이벤트 핸들러를 호출합니다.
+            onClick={handleSignUpClick}
           >
             sign-up
           </button>
@@ -50,6 +102,7 @@ const LoginPage = () => {
             className="e1_31"
             id="login-form-submit"
             value="log-in"
+            onClick={handleLoginClick} // Added onClick event to handle login
           />
         </div>
         <div className="e1_20">
@@ -63,6 +116,9 @@ const LoginPage = () => {
             name="ID"
             placeholder="Student Number"
             maxLength="8"
+            required
+            value={studentId}
+            onChange={(e) => setStudentId(e.target.value)} // Added onChange event to update state
           />
           <input
             type="password"
@@ -70,6 +126,9 @@ const LoginPage = () => {
             name="Password"
             placeholder="PW"
             maxLength="20"
+            required
+            value={password}
+            onChange={(e) => setPassword(e.target.value)} // Added onChange event to update state
           />
         </form>
       </div>
