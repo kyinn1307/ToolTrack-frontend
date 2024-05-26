@@ -24,8 +24,8 @@ const LoginPage = () => {
   };
 
   const handleLoginClick = async (e) => {
-    // change the declaration of function as async
     e.preventDefault();
+
     const idInput = document.querySelector("input[name='ID']");
     const pwInput = document.querySelector("input[name='Password']");
     const idValue = idInput.value.trim();
@@ -40,24 +40,25 @@ const LoginPage = () => {
     } else if (!pwValue) {
       alert("Please enter your Password.");
     } else {
-      // Add the code to handle successful login
-      // make a request to backend
-      const data = { studentId: idValue, password: pwValue };
+      const csrfToken = document.querySelector(
+        "input[name='csrfmiddlewaretoken']"
+      ).value;
 
+      const data = { studentId: idValue, password: pwValue };
       try {
         const response = await fetch("http://localhost:8000/login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
+            "X-CSRFToken": csrfToken,
           },
           body: JSON.stringify(data),
         });
-
+        console.log("Entered");
         if (response.ok) {
           const result = await response.json();
           console.log("Login successful:", result);
-          // Handle successful login (e.g., redirect to dashboard)
-          navigate("/roomselection"); // navigate to room selection page
+          navigate("/roomselection");
         } else {
           console.error("Login failed:", response.statusText);
           alert("Login failed. Please check your credentials and try again.");
@@ -65,7 +66,6 @@ const LoginPage = () => {
       } catch (error) {
         console.error("Error during login:", error);
         alert("An error occurred during login. Please try again later.");
-        navigate("/roomselection"); // the part that has to remove
       }
     }
   };
@@ -110,7 +110,12 @@ const LoginPage = () => {
           <div className="e1_18"></div>
           <span className="e1_19">only for ITM students</span>
         </div>
-        <form className="e1_12" id="login-form">
+        <form className="e1_12" id="login-form" method="POST">
+          <input
+            type="hidden"
+            name="csrfmiddlewaretoken"
+            value="{{ csrf_token }}"
+          />
           <input
             type="text"
             className="e1_21"
