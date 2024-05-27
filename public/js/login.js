@@ -9,20 +9,23 @@ document.addEventListener("DOMContentLoaded", () => {
     event.preventDefault();
     loginUser();
   });
-  // in the case of click sign-up button
+
+  // Navigate to sign-up page on sign-up button click
   signUpButton.addEventListener("click", () => {
-    window.location.href = "../SignUp/SignUp.html";
+    window.location.href = "SignUp.html";
   });
-  // in the case of click login button in header area
+
+  // Navigate to login page on login button click in header
   loginButton.addEventListener("click", () => {
     window.location.href = "login.html";
   });
-  // in the case of click main button 'ITM ToolTrack' in header area
+
+  // Navigate to login page on main button click in header
   mainButton.addEventListener("click", () => {
     window.location.href = "login.html";
   });
 
-  // when user enter the 'Enter' key
+  // Submit form on Enter key press
   loginForm.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
       event.preventDefault();
@@ -30,21 +33,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Implementing the function of login process
   function loginUser() {
     const userID = loginForm.elements["ID"].value;
     const userPassword = loginForm.elements["Password"].value;
-    // alert when input area is empty
+
     if (userID === "" || userPassword === "") {
       alert("Please enter ID and password.");
       return;
     }
 
-    // Create an AJAX request to send the login data to the Django backend
     const xhr = new XMLHttpRequest();
     xhr.open("POST", "/login/", true);
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhr.setRequestHeader("X-CSRFToken", getCookie("csrftoken")); // Include the CSRF token
+    xhr.setRequestHeader("X-CSRFToken", getCookie("csrftoken"));
 
     xhr.onreadystatechange = function () {
       if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -66,14 +67,12 @@ document.addEventListener("DOMContentLoaded", () => {
     xhr.send(requestData);
   }
 
-  // Function to get CSRF token from cookie
   function getCookie(name) {
     let cookieValue = null;
     if (document.cookie && document.cookie !== "") {
       const cookies = document.cookie.split(";");
       for (let i = 0; i < cookies.length; i++) {
         const cookie = cookies[i].trim();
-        // Does this cookie string begin with the name we want?
         if (cookie.substring(0, name.length + 1) === name + "=") {
           cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
           break;
@@ -83,9 +82,8 @@ document.addEventListener("DOMContentLoaded", () => {
     return cookieValue;
   }
 
-  // remove placeholder when user click the input area
-  var idInput = document.querySelector('input[name="ID"]');
-  var pwInput = document.querySelector('input[name="Password"]');
+  const idInput = document.querySelector('input[name="ID"]');
+  const pwInput = document.querySelector('input[name="Password"]');
 
   idInput.addEventListener("focus", function () {
     this.removeAttribute("placeholder");

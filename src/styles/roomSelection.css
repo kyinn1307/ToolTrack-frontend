@@ -1,0 +1,305 @@
+body {
+  background: #e5e5e5;
+}
+/* header */
+.e1_4 {
+  position: relative;
+  width: 1920px;
+  height: 70px;
+
+  background-color: #ffffff;
+}
+/* website name */
+.e1_7 {
+  position: absolute;
+  width: 198px;
+  height: 37px;
+  left: 20px;
+  top: 16px;
+  font-family: "Kumbh Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 37px;
+  color: #000000;
+  cursor: pointer;
+}
+/* login group */
+.e1_8 {
+  box-sizing: border-box;
+  font-weight: bold;
+  position: absolute;
+  width: 90px;
+  height: 40px;
+  left: 1810px;
+  top: 15px;
+  text-align: center;
+  border: 1px solid #000000;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: #ffffff;
+}
+
+/* main css in roomSelection.css */
+/* css for room selection */
+.e5_74 {
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 1);
+  width: 1920px;
+  height: 740px;
+  position: absolute;
+}
+
+/* Original button styles */
+.e5_87,
+.e5_88 {
+  width: 373px;
+  height: 500px;
+  position: absolute;
+  top: 120px;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  transition: background-color 0.3s, transform 0.3s;
+  position: absolute; /* Ensure that the pseudo-element is positioned relative to the button */
+  cursor: pointer;
+}
+
+.e5_87 {
+  left: 774px;
+  background-image: url(https://gi.esmplus.com/untteutmax/webprogramming/office.jpeg);
+}
+
+.e5_88 {
+  left: 1168px;
+  background-image: url(https://gi.esmplus.com/untteutmax/webprogramming/student%20room.jpeg);
+}
+
+/* Hover effects */
+.e5_87.hovered,
+.e5_88.hovered {
+  background-color: rgba(0, 0, 0, 0.5); /* Darker background color on hover */
+  cursor: pointer;
+}
+
+.e5_87.hovered::after,
+.e5_88.hovered::after {
+  position: absolute;
+  right: 10px; /* Position arrow to the right inside the button */
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2em;
+  color: white;
+}
+.e5_87.hovered .e5_96 {
+  display: block;
+}
+.e5_88.hovered .e5_97 {
+  display: block;
+}
+
+.e5_89 {
+  color: rgba(0, 0, 0, 1);
+  width: 132px;
+  height: 25px;
+  position: absolute;
+  left: 380px;
+  top: 120px;
+  text-align: center;
+  font-size: 20px;
+  letter-spacing: 0;
+}
+.e5_90 {
+  color: rgba(0, 0, 0, 1);
+  width: 299px;
+  height: 186px;
+  position: absolute;
+  left: 380px;
+  top: 185px;
+  text-align: left;
+  font-size: 50px;
+  letter-spacing: 0;
+}
+.e5_95 {
+  color: rgba(0, 0, 0, 1);
+  width: 345px;
+  height: 111px;
+  position: absolute;
+  left: 380px;
+  top: 411px;
+  text-align: left;
+  font-size: 30px;
+  letter-spacing: 0;
+}
+
+/* css for sign up page */
+.e28_34 {
+  color: rgba(0, 0, 0, 1);
+  width: 244px;
+  height: 37px;
+  position: absolute;
+  left: 431px;
+  top: 562px;
+  text-align: right;
+  font-size: 24px;
+  letter-spacing: 0;
+}
+.e8_109 {
+  width: 150px;
+  height: 40px;
+  position: absolute;
+  left: 977px;
+  top: 560px;
+}
+.e8_108 {
+  width: 150px;
+  height: 40px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+.e8_105 {
+  background-color: rgba(
+    190.0000038743019,
+    177.0000046491623,
+    168.0000051856041,
+    0.8999999761581421
+  );
+  width: 150px;
+  height: 40px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.e8_107 {
+  color: rgba(255, 255, 255, 1);
+  width: 52px;
+  height: 25px;
+  position: absolute;
+  left: 49px;
+  top: 8px;
+  font-family: Kumbh Sans;
+  text-align: center;
+  font-size: 20px;
+  letter-spacing: 0;
+}
+.e8_110 {
+  width: 186px;
+  height: 40px;
+  position: absolute;
+  left: 1335px;
+  top: 560px;
+}
+.e8_111 {
+  width: 186px;
+  height: 40px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+.e8_112 {
+  background-color: rgba(
+    106.00000128149986,
+    75.00000312924385,
+    46.000001057982445,
+    0.8999999761581421
+  );
+  width: 186px;
+  height: 40px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.e8_113 {
+  color: rgba(255, 255, 255, 1);
+  width: 126px;
+  height: 25px;
+  position: absolute;
+  left: 30px;
+  top: 8px;
+  font-family: Kumbh Sans;
+  text-align: center;
+  font-size: 20px;
+  letter-spacing: 0;
+}
+.e32_81 {
+  width: 78px;
+  height: 25px;
+  position: absolute;
+  left: 675px;
+  top: 120px;
+}
+.e32_79 {
+  color: rgba(0, 0, 0, 1);
+  width: 50px;
+  height: 14px;
+  position: absolute;
+  left: 14px;
+  top: 6px;
+  font-family: Kumbh Sans;
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 0;
+}
+.e32_80 {
+  border: 1px solid rgba(0, 0, 0, 1);
+  width: 78px;
+  height: 25px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+
+#office-button.hovered,
+#student-room-button.hovered {
+  background-color: #555; /* Darker background color on hover */
+  cursor: pointer;
+}
+
+.e5_96 {
+  display: none;
+  background-color: rgba(
+    9.36328087002039,
+    9.315428137779236,
+    9.315428137779236,
+    0.800000011920929
+  );
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  z-index: 10;
+}
+
+.e5_97 {
+  display: none;
+  background-color: rgba(
+    9.36328087002039,
+    9.315428137779236,
+    9.315428137779236,
+    0.800000011920929
+  );
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  z-index: 10;
+}
