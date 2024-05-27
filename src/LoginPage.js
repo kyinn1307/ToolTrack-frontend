@@ -40,9 +40,9 @@ const LoginPage = () => {
     } else if (!pwValue) {
       alert("Please enter your Password.");
     } else {
-      const csrfToken = document.querySelector(
-        "input[name='csrfmiddlewaretoken']"
-      ).value;
+      // const csrfToken = document.querySelector(
+      //   "input[name='csrfmiddlewaretoken']"
+      // ).value;
 
       const data = { studentId: idValue, password: pwValue };
       try {
@@ -50,14 +50,14 @@ const LoginPage = () => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "X-CSRFToken": csrfToken,
+            // "X-CSRFToken": csrfToken,
           },
           body: JSON.stringify(data),
         });
         if (response.ok) {
           const result = await response.json();
           console.log("Login successful:", result);
-          navigate("/roomselection");
+          navigate("/roomselection", { state: { student: result } });
         } else {
           console.error("Login failed:", response.statusText);
           alert("Login failed. Please check your credentials and try again.");
