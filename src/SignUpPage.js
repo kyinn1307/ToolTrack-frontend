@@ -28,6 +28,7 @@ const SignUpPage = () => {
         const result = await response.json();
         console.log("Sign up successful:", result);
         // Handle successful signup (e.g., redirect to login page)
+        window.location.href = "http://localhost:3000";
       } else {
         console.error("Sign up failed:", response.statusText);
         // Handle signup failure
