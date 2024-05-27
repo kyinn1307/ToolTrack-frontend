@@ -3,7 +3,7 @@ import "../src/styles/SignUp.css";
 
 const SignUpPage = () => {
   const [studentId, setStudentId] = useState("");
-  const [username, setUsername] = useState("");
+  const [name, setName] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSignUp = async (e) => {
@@ -11,7 +11,7 @@ const SignUpPage = () => {
 
     const data = {
       studentId,
-      username,
+      name,
       password,
     };
 
@@ -66,14 +66,14 @@ const SignUpPage = () => {
           <div className="e28_27">
             <input
               type="text"
-              id="username"
-              name="username"
+              id="name"
+              name="name"
               className="e28_21"
-              placeholder="Username"
+              placeholder="Name"
               maxLength="20"
               required
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              value={name}
+              onChange={(e) => setName(e.target.value)}
             />
           </div>
           <div className="e28_24">

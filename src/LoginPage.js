@@ -54,7 +54,6 @@ const LoginPage = () => {
           },
           body: JSON.stringify(data),
         });
-        console.log("Entered");
         if (response.ok) {
           const result = await response.json();
           console.log("Login successful:", result);
