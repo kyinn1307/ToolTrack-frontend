@@ -45,7 +45,7 @@ body {
   overflow: hidden;
   background-color: rgba(255, 255, 255, 1);
   width: 1920px;
-  height: 700px;
+  height: 740px;
   position: absolute;
 }
 .e102_3 {
@@ -83,7 +83,7 @@ body {
   height: 250px;
   position: absolute;
   left: 675px;
-  top: 275px;
+  top: 205px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
@@ -95,7 +95,7 @@ body {
   height: 37px;
   position: absolute;
   left: 921px;
-  top: 595px;
+  top: 525px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -107,7 +107,7 @@ body {
   height: 37px;
   position: absolute;
   left: 822px;
-  top: 548px;
+  top: 478px;
   font-family: Kumbh Sans;
   text-align: left;
   font-size: 30px;
@@ -130,7 +130,7 @@ body {
   height: 70px;
   position: absolute;
   left: 773px;
-  top: 652px;
+  top: 582px;
   border: 1px solid rgba(0, 0, 0, 1);
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
@@ -174,8 +174,16 @@ body {
   border-radius: 1px;
   transform: rotate(-90deg);
   clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
-  position: absolute; /* 자식 div를 절대 위치로 설정 */
+  position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) rotate(-90deg); /* 중앙에 배치하고 회전 유지 */
+  transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+/* css for image of each item */
+.item-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  object-fit: cover;
 }
