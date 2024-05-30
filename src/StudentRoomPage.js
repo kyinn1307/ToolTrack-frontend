@@ -9,6 +9,10 @@ const StudentRoomPage = () => {
     navigate("/roomselection"); // Use navigate to change the route
   };
 
+  const handleItemButtonClick = (item) => {
+    navigate(`/borrowing/${item}`, { state: { from: "studentroom" } });
+  }; // go to borrowing item page with state that items belong to
+
   return (
     <div>
       <div className="e1_4">
@@ -22,8 +26,21 @@ const StudentRoomPage = () => {
 
       <div className="e28_45">
         <div className="e28_46"></div>
-        <div className="e28_47"></div>
-        <div className="e28_48"></div>
+        <div
+          className="e28_47"
+          id="earphone_button"
+          onClick={() => handleItemButtonClick("earphone")}
+        >
+          <div className="e28_63"></div> {/* div for layer */}
+        </div>
+
+        <div
+          className="e28_48"
+          id="ruler_button"
+          onClick={() => handleItemButtonClick("ruler")}
+        >
+          <div className="e28_64"></div>
+        </div>
         <span className="e28_50">
           Which <b>tool</b> do you want?
         </span>
@@ -31,18 +48,19 @@ const StudentRoomPage = () => {
           Now you can borrow from the <b>students room</b>
         </span>
         <span className="e28_52">Remaining number</span>
-        <span className="e28_53">earphone</span>
-        <span className="e28_54">12</span>
-        <div className="e28_55">
-          <div className="e28_56">
-            <div className="e28_57"></div>
-          </div>
+        <span className="e28_53" id="item_name">
+          earphone
+        </span>
+        <span className="e28_54" id="item_remain_num">
+          12
+        </span>
+        <div
+          className="e28_55"
+          onClick={() => handleItemButtonClick("earphone")}
+        >
           <span className="e28_58">earphone</span>
         </div>
         <div className="e28_59">
-          <div className="e28_60">
-            <div className="e28_61"></div>
-          </div>
           <span className="e28_62">ruler</span>
         </div>
         <div
