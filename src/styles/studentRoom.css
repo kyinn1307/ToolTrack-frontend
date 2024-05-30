@@ -1,14 +1,15 @@
 body {
   background: #e5e5e5;
 }
+
 /* header */
 .e1_4 {
   position: relative;
   width: 1920px;
   height: 70px;
-
   background-color: #ffffff;
 }
+
 /* website name */
 .e1_7 {
   position: absolute;
@@ -21,9 +22,10 @@ body {
   font-weight: 400;
   font-size: 30px;
   line-height: 37px;
-  cursor: pointer;
   color: #000000;
+  cursor: pointer;
 }
+
 /* login group */
 .e1_8 {
   box-sizing: border-box;
@@ -39,6 +41,7 @@ body {
   cursor: pointer;
   background-color: #ffffff;
 }
+
 /* main css in student room.css */
 .e28_45 {
   overflow: hidden;
@@ -47,6 +50,7 @@ body {
   height: 740px;
   position: absolute;
 }
+
 .e28_46 {
   border: 1px solid rgba(0, 0, 0, 1);
   width: 78px;
@@ -59,13 +63,9 @@ body {
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
+
 .e28_47 {
-  background-color: rgba(
-    217.0000022649765,
-    217.0000022649765,
-    217.0000022649765,
-    1
-  );
+  background-color: rgba(217, 217, 217, 1);
   width: 373px;
   height: 500px;
   position: absolute;
@@ -75,17 +75,14 @@ body {
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  background-image: url(https://gi.esmplus.com/untteutmax/webprogramming/earphone.jpeg);
+  background-image: url("https://gi.esmplus.com/untteutmax/webprogramming/earphone.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
+  cursor: pointer;
 }
+
 .e28_48 {
-  background-color: rgba(
-    217.0000022649765,
-    217.0000022649765,
-    217.0000022649765,
-    1
-  );
+  background-color: rgba(217, 217, 217, 1);
   width: 373px;
   height: 500px;
   position: absolute;
@@ -95,10 +92,12 @@ body {
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  background-image: url(https://gi.esmplus.com/untteutmax/webprogramming/ruler.jpeg);
+  background-image: url("https://gi.esmplus.com/untteutmax/webprogramming/ruler.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
+  cursor: pointer;
 }
+
 .e28_50 {
   color: rgba(0, 0, 0, 1);
   width: 350px;
@@ -110,6 +109,7 @@ body {
   font-size: 50px;
   letter-spacing: 0;
 }
+
 .e28_51 {
   color: rgba(0, 0, 0, 1);
   width: 333px;
@@ -121,6 +121,7 @@ body {
   font-size: 30px;
   letter-spacing: 0;
 }
+
 .e28_52 {
   color: rgba(0, 0, 0, 1);
   width: 500px;
@@ -146,6 +147,7 @@ body {
   font-size: 30px;
   letter-spacing: 0;
 }
+
 .e28_54 {
   color: rgba(0, 0, 0, 1);
   width: 30px;
@@ -158,13 +160,20 @@ body {
   font-size: 30px;
   letter-spacing: 0;
 }
+
 .e28_55 {
   width: 150px;
   height: 40px;
   position: absolute;
   left: 977px;
   top: 557px;
+  background-color: rgba(165, 165, 165, 0.8);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
+
 .e28_56 {
   width: 150px;
   height: 40px;
@@ -172,23 +181,7 @@ body {
   left: 0px;
   top: 0px;
 }
-.e28_57 {
-  background-color: rgba(
-    165.00000536441803,
-    165.00000536441803,
-    165.00000536441803,
-    0.800000011920929
-  );
-  width: 150px;
-  height: 40px;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
+
 .e28_58 {
   color: rgba(255, 255, 255, 1);
   width: 90px;
@@ -201,13 +194,20 @@ body {
   font-size: 20px;
   letter-spacing: 0;
 }
+
 .e28_59 {
   width: 150px;
   height: 40px;
   position: absolute;
   left: 1371px;
   top: 557px;
+  background-color: rgba(247, 195, 55, 0.8);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
+
 .e28_60 {
   width: 150px;
   height: 40px;
@@ -215,13 +215,9 @@ body {
   left: 0px;
   top: 0px;
 }
+
 .e28_61 {
-  background-color: rgba(
-    247.00000047683716,
-    195.0000035762787,
-    55.00000052154064,
-    0.800000011920929
-  );
+  background-color: rgba(247, 195, 55, 0.8);
   width: 150px;
   height: 40px;
   position: absolute;
@@ -232,6 +228,7 @@ body {
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
+
 .e28_62 {
   color: rgba(255, 255, 255, 1);
   width: 44px;
@@ -246,23 +243,24 @@ body {
 }
 
 /* layer of selection button of ruler */
-.e28_63 {
-  background-color: rgba(
-    9.36328087002039,
-    9.315428137779236,
-    9.315428137779236,
-    0.800000011920929
-  );
+.e28_63,
+.e28_64 {
+  display: none;
+  background-color: rgba(9, 9, 9, 0.8);
   width: 373px;
   height: 500px;
   position: absolute;
-  left: 1168px;
-  top: 120px;
   border-radius: 20px;
+  z-index: 10;
+}
+
+.e28_47:hover .e28_63,
+.e28_48:hover .e28_64 {
+  display: block;
 }
 
 .e32_101 {
-  position: absolute; /* 부모 div를 상대 위치로 설정 */
+  position: absolute;
   width: 78px;
   height: 25px;
   left: 380px;
