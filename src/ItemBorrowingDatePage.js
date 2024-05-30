@@ -26,14 +26,6 @@ const ItemBorrowingDatePage = () => {
         >
           ITM <b>ToolTrack</b>
         </span>
-        <button
-          type="button"
-          className="e1_8"
-          id="login-button"
-          onClick={() => handleNavigation("/login")}
-        >
-          login
-        </button>
       </div>
       <div className="e102_53">
         <div className="e174_9">

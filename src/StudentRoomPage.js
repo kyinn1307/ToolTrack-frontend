@@ -19,9 +19,6 @@ const StudentRoomPage = () => {
         <span className="e1_7" id="main-button" onClick={handleBackButtonClick}>
           ITM <b>ToolTrack</b>
         </span>
-        <button type="button" className="e1_8" id="login-button">
-          login
-        </button>
       </div>
 
       <div className="e28_45">
