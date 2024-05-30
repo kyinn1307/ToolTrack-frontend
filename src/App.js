@@ -7,6 +7,8 @@ import AddItemPage from "./AddItemPage";
 import RemoveItemPage from "./RemoveItem";
 import StudentRoomPage from "./StudentRoomPage";
 import OfficePage from "./OfficePage";
+import BorrowingPage from "./BorrowingPage";
+import ItemBorrowingDatePage from "./ItemBorrowingDatePage";
 
 const App = () => {
   return (
@@ -15,8 +17,15 @@ const App = () => {
         <Route path="/" element={<LoginPage />} />
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/roomselection" element={<RoomSelectionPage />} />
+        <Route path="/office" element={<OfficePage />} />
+        <Route path="/studentroom" element={<StudentRoomPage />} />
         <Route path="/additem" element={<AddItemPage />} />
         <Route path="/removeitem" element={<RemoveItemPage />} />
+        <Route path="/borrowing/:item" element={<BorrowingPage />} />
+        <Route
+          path="/borrowing/date/:item"
+          element={<ItemBorrowingDatePage />}
+        />
       </Routes>
     </Router>
   );
