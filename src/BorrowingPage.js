@@ -80,7 +80,9 @@ const BorrowingPage = () => {
             id="borrow-button"
             onClick={handleBorrowClick}
           >
-            <span className="e102_38">BORROW</span>
+            <span className="e102_38">
+              <b>BORROW</b>
+            </span>
           </div>
         </div>
       )}
