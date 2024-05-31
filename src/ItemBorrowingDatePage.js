@@ -7,7 +7,7 @@ const ItemBorrowingDatePage = () => {
   const { item } = useParams();
   const location = useLocation();
   const from = location.state?.from;
-
+  const [value, setValue] = useState("0");
   const [borrowingDate, setBorrowingDate] = useState(() => {
     const today = new Date();
     return today.toISOString().split("T")[0];
@@ -20,6 +20,13 @@ const ItemBorrowingDatePage = () => {
 
   const handleNavigation = (path, state) => {
     navigate(path, { state });
+  };
+
+  const handleChange = (e) => {
+    const newValue = e.target.value;
+    if (/^\d{0,2}$/.test(newValue)) {
+      setValue(newValue);
+    }
   };
 
   const handleBackClick = () => {
@@ -46,7 +53,6 @@ const ItemBorrowingDatePage = () => {
       <div className="e102_53">
         <div className="e174_9">
           <span className="e102_54">Student’s office</span>
-          <span className="e121_13">02</span>
           <span className="e102_55">
             {item.charAt(0).toUpperCase() + item.slice(1)}
           </span>
@@ -101,15 +107,15 @@ const ItemBorrowingDatePage = () => {
         >
           <div className="e102_65"></div>
         </div>
-        <div className="e174_8">
-          <div className="e121_7">
-            <div className="e121_10">
-              <div className="e121_11">
-                <div className="e121_12"></div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <input
+          type="number"
+          name="favnum"
+          min="0"
+          max="99"
+          value={value}
+          onChange={handleChange}
+          className="e174_8"
+        />
       </div>
     </div>
   );
