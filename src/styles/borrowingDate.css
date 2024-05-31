@@ -215,8 +215,8 @@ body {
   width: 289px;
   height: 185px;
   position: absolute;
-  left: 141px;
-  top: 265px;
+  left: 12%; 
+  top: 5%; 
   font-family: Kumbh Sans;
   text-align: left;
   font-size: 30px;
@@ -296,8 +296,8 @@ body {
   width: 36px;
   height: 37px;
   position: absolute;
-  left: 166px;
-  top: 418px;
+  left: 170px;
+  top: 422px;
   font-family: Kumbh Sans;
   text-align: center;
   font-size: 30px;
@@ -308,8 +308,8 @@ body {
   width: 28px;
   height: 37px;
   position: absolute;
-  left: 359px;
-  top: 418px;
+  left: 360px;
+  top: 422px;
   font-family: Kumbh Sans;
   text-align: center;
   font-size: 30px;
@@ -320,8 +320,8 @@ body {
   width: 34px;
   height: 37px;
   position: absolute;
-  left: 262px;
-  top: 418px;
+  left: 268px;
+  top: 422px;
   font-family: Kumbh Sans;
   text-align: center;
   font-size: 30px;
@@ -333,7 +333,7 @@ body {
   height: 37px;
   position: absolute;
   left: 141px;
-  top: 418px;
+  top: 423px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
@@ -345,7 +345,7 @@ body {
   height: 0px;
   position: absolute;
   left: 323px;
-  top: 437px;
+  top: 441px;
   border: 1px solid rgba(0, 0, 0, 1);
 }
 .e121_19 {
@@ -354,7 +354,7 @@ body {
   height: 0px;
   position: absolute;
   left: 224px;
-  top: 437px;
+  top: 441px;
   border: 1px solid rgba(0, 0, 0, 1);
 }
 .e102_64 {

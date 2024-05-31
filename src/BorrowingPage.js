@@ -10,17 +10,33 @@ const BorrowingPage = () => {
 
   const items = {
     calculator: 26,
-    blanket: 15,
+    blanket: 10,
+    medicine: 15,
     earphone: 12,
     ruler: 20,
+    tissue: 10,
   };
 
+  // let listOfItems= [
+  //   {calculator: 26,
+  //     blanket: 15,
+  //     earphone: 12,
+  //     ruler: 20,},
+  //     {
+  //       calculator: 26,
+  //       blanket: 15,
+  //       earphone: 12,
+  //       ruler: 20,}
+  // ]
   const images = {
     calculator:
       "https://gi.esmplus.com/untteutmax/webprogramming/calculator.jpeg",
     blanket: "https://gi.esmplus.com/untteutmax/webprogramming/blanket.jpeg",
     earphone: "https://gi.esmplus.com/untteutmax/webprogramming/earphone.jpeg",
     ruler: "https://gi.esmplus.com/untteutmax/webprogramming/ruler.jpeg",
+    medicine:
+      "https://gi.esmplus.com/untteutmax/webprogramming/preventiveMedicine.jpg",
+    tissue: "https://gi.esmplus.com/untteutmax/webprogramming/tissue.jpg",
   };
 
   const itemName = item ? item.charAt(0).toUpperCase() + item.slice(1) : "";
@@ -69,7 +85,15 @@ const BorrowingPage = () => {
             <div className="e102_7"></div>
           </div>
           <div className="e102_25">
-            <img src={itemImage} alt={itemName} className="item-image" />
+            {itemCount > 0 ? (
+              <img
+                src={itemImage}
+                alt={item.charAt(0).toUpperCase() + item.slice(1)}
+                className="item-image"
+              />
+            ) : (
+              <div className="no-remaining">There are no remainings</div>
+            )}
           </div>
           <div className="e102_33">
             <span className="e102_36">{itemCount}</span>
@@ -78,7 +102,11 @@ const BorrowingPage = () => {
           <div
             className="e102_41"
             id="borrow-button"
-            onClick={handleBorrowClick}
+            onClick={itemCount > 0 ? handleBorrowClick : null}
+            style={{
+              opacity: itemCount > 0 ? 1 : 0.5,
+              cursor: itemCount > 0 ? "pointer" : "default",
+            }}
           >
             <span className="e102_38">
               <b>BORROW</b>

@@ -40,17 +40,20 @@ const ItemBorrowingDatePage = () => {
           <span className="e102_55">
             {item.charAt(0).toUpperCase() + item.slice(1)}
           </span>
-          <div className="e102_58"></div>
+          <div className="e102_58">
+            <span className="e121_6">
+              You’re gonna <br />
+              borrow
+              <br />
+              {item}.<br />
+              The returning date is
+            </span>
+          </div>
           <div className="e102_75"></div>
           <div className="e102_76"></div>
           <span className="e102_59">Borrowing date</span>
           <span className="e102_71">Returning date</span>
-          <span className="e121_6">
-            You’re gonna borrow
-            <br />
-            {item}.<br />
-            The returning date is
-          </span>
+
           <div
             className="e102_70"
             id="confirm-button"
