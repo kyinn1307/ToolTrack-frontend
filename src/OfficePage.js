@@ -1,12 +1,33 @@
-// import React, { useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../src/styles/office.css";
 
 const OfficePage = () => {
   const navigate = useNavigate();
 
+  const [hoveredItem, setHoveredItem] = useState(null);
+  const [lastHoveredItem, setLastHoveredItem] = useState("calculator");
+
+  const items = {
+    calculator: 26,
+    blanket: 10, // need to change
+  };
+
   const handleBackButtonClick = () => {
     navigate("/roomselection"); // Use navigate to change the route
+  };
+
+  const handleItemButtonClick = (item) => {
+    navigate(`/borrowing/${item}`, { state: { from: "office" } });
+  }; // go to borrowing item page with state that items belong to
+
+  const handleMouseEnter = (item) => {
+    setHoveredItem(item);
+    setLastHoveredItem(item);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredItem(null);
   };
 
   return (
@@ -15,17 +36,25 @@ const OfficePage = () => {
         <span className="e1_7" id="main-button" onClick={handleBackButtonClick}>
           ITM <b>ToolTrack</b>
         </span>
-        <button type="button" className="e1_8" id="login-button">
-          login
-        </button>
       </div>
 
       <div className="e19_14">
         <div className="e19_15"></div>
-        <div className="e19_16" id="calculator-box">
+        <div
+          className="e19_16"
+          id="calculator-box"
+          onClick={() => handleItemButtonClick("calculator")}
+          onMouseEnter={() => handleMouseEnter("calculator")}
+          onMouseLeave={handleMouseLeave}
+        >
           <div className="e19_33"></div>
         </div>
-        <div className="e19_17">
+        <div
+          className="e19_17"
+          onClick={() => handleItemButtonClick("blanket")}
+          onMouseEnter={() => handleMouseEnter("blanket")}
+          onMouseLeave={handleMouseLeave}
+        >
           <div className="e19_32"></div>
         </div>
         <span className="e19_19">
@@ -35,15 +64,33 @@ const OfficePage = () => {
           Now you can borrow from the <b>office</b>
         </span>
         <span className="e19_21">Remaining number</span>
-        <span className="e19_22">calculator</span>
-        <span className="e19_23">26</span>
-        <div className="e19_24">
+        <span className="e19_22" id="item_name_mouse">
+          {hoveredItem ? hoveredItem : lastHoveredItem ? lastHoveredItem : ""}
+        </span>
+        <span className="e19_23" id="item_num_mouse">
+          {hoveredItem
+            ? items[hoveredItem]
+            : lastHoveredItem
+            ? items[lastHoveredItem]
+            : ""}
+        </span>
+        <div
+          className="e19_24"
+          onClick={() => handleItemButtonClick("calculator")}
+          onMouseEnter={() => handleMouseEnter("calculator")}
+          onMouseLeave={handleMouseLeave}
+        >
           <div className="e19_25">
             <div className="e19_26"></div>
           </div>
           <span className="e19_27">calculator</span>
         </div>
-        <div className="e19_28">
+        <div
+          className="e19_28"
+          onClick={() => handleItemButtonClick("blanket")}
+          onMouseEnter={() => handleMouseEnter("blanket")}
+          onMouseLeave={handleMouseLeave}
+        >
           <div className="e19_29">
             <div className="e19_30"></div>
           </div>

@@ -1,13 +1,38 @@
-// import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../src/styles/studentRoom.css";
 
 const StudentRoomPage = () => {
   const navigate = useNavigate();
 
+  const [hoveredItem, setHoveredItem] = useState(null);
+  const [lastHoveredItem, setLastHoveredItem] = useState("earphone");
+
+  const items = {
+    earphone: 12,
+    ruler: 8, // ruler의 개수를 실제 값으로 설정하세요.
+  };
+
   const handleBackButtonClick = () => {
     navigate("/roomselection"); // Use navigate to change the route
   };
+
+  const handleItemButtonClick = (item) => {
+    navigate(`/borrowing/${item}`, { state: { from: "studentroom" } });
+  }; // go to borrowing item page with state that items belong to
+
+  const handleMouseEnter = (item) => {
+    setHoveredItem(item);
+    setLastHoveredItem(item);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredItem(null);
+  };
+
+  useEffect(() => {
+    setLastHoveredItem("earphone");
+  }, []);
 
   return (
     <div>
@@ -15,15 +40,28 @@ const StudentRoomPage = () => {
         <span className="e1_7" id="main-button" onClick={handleBackButtonClick}>
           ITM <b>ToolTrack</b>
         </span>
-        <button type="button" className="e1_8" id="login-button">
-          login
-        </button>
       </div>
 
       <div className="e28_45">
         <div className="e28_46"></div>
-        <div className="e28_47"></div>
-        <div className="e28_48"></div>
+        <div
+          className="e28_47"
+          id="earphone_button"
+          onClick={() => handleItemButtonClick("earphone")}
+          onMouseEnter={() => handleMouseEnter("earphone")}
+          onMouseLeave={handleMouseLeave}
+        >
+          <div className="e28_63"></div>
+        </div>
+        <div
+          className="e28_48"
+          id="ruler_button"
+          onClick={() => handleItemButtonClick("ruler")}
+          onMouseEnter={() => handleMouseEnter("ruler")}
+          onMouseLeave={handleMouseLeave}
+        >
+          <div className="e28_64"></div>
+        </div>
         <span className="e28_50">
           Which <b>tool</b> do you want?
         </span>
@@ -31,18 +69,26 @@ const StudentRoomPage = () => {
           Now you can borrow from the <b>students room</b>
         </span>
         <span className="e28_52">Remaining number</span>
-        <span className="e28_53">earphone</span>
-        <span className="e28_54">12</span>
-        <div className="e28_55">
-          <div className="e28_56">
-            <div className="e28_57"></div>
-          </div>
+        <span className="e28_53" id="item_name">
+          {hoveredItem ? hoveredItem : lastHoveredItem ? lastHoveredItem : ""}
+        </span>
+        <span className="e28_54" id="item_remain_num">
+          {hoveredItem ? items[hoveredItem] : lastHoveredItem ? items[lastHoveredItem] : ""}
+        </span>
+        <div
+          className="e28_55"
+          onClick={() => handleItemButtonClick("earphone")}
+          onMouseEnter={() => handleMouseEnter("earphone")}
+          onMouseLeave={handleMouseLeave}
+        >
           <span className="e28_58">earphone</span>
         </div>
-        <div className="e28_59">
-          <div className="e28_60">
-            <div className="e28_61"></div>
-          </div>
+        <div
+          className="e28_59"
+          onClick={() => handleItemButtonClick("ruler")}
+          onMouseEnter={() => handleMouseEnter("ruler")}
+          onMouseLeave={handleMouseLeave}
+        >
           <span className="e28_62">ruler</span>
         </div>
         <div
