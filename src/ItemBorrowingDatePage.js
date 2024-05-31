@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
 import "../src/styles/borrowingDate.css"; // Ensure you have the corresponding CSS file
 
@@ -8,6 +8,16 @@ const ItemBorrowingDatePage = () => {
   const location = useLocation();
   const from = location.state?.from;
 
+  const [borrowingDate, setBorrowingDate] = useState(() => {
+    const today = new Date();
+    return today.toISOString().split("T")[0];
+  });
+
+  const [returningDate, setReturningDate] = useState(() => {
+    const today = new Date();
+    return today.toISOString().split("T")[0];
+  });
+
   const handleNavigation = (path, state) => {
     navigate(path, { state });
   };
@@ -15,6 +25,12 @@ const ItemBorrowingDatePage = () => {
   const handleBackClick = () => {
     handleNavigation(`/borrowing/${item}`, { from });
   };
+
+  useEffect(() => {
+    if (returningDate < borrowingDate) {
+      setReturningDate(borrowingDate);
+    }
+  }, [borrowingDate]);
 
   return (
     <div>
@@ -30,12 +46,6 @@ const ItemBorrowingDatePage = () => {
       <div className="e102_53">
         <div className="e174_9">
           <span className="e102_54">Student’s office</span>
-          <span className="e102_82">24</span>
-          <span className="e102_83">24</span>
-          <span className="e102_84">05</span>
-          <span className="e102_86">17</span>
-          <span className="e102_87">31</span>
-          <span className="e102_85">05</span>
           <span className="e121_13">02</span>
           <span className="e102_55">
             {item.charAt(0).toUpperCase() + item.slice(1)}
@@ -49,8 +59,19 @@ const ItemBorrowingDatePage = () => {
               The returning date is
             </span>
           </div>
-          <div className="e102_75"></div>
-          <div className="e102_76"></div>
+          <input
+            type="date"
+            className="e102_75"
+            value={borrowingDate}
+            onChange={(e) => setBorrowingDate(e.target.value)}
+          />
+          <input
+            type="date"
+            className="e102_76"
+            value={returningDate}
+            min={borrowingDate}
+            onChange={(e) => setReturningDate(e.target.value)}
+          />
           <span className="e102_59">Borrowing date</span>
           <span className="e102_71">Returning date</span>
 
@@ -65,16 +86,13 @@ const ItemBorrowingDatePage = () => {
               </span>
             </div>
           </div>
-          <div className="e102_77"></div>
-          <div className="e102_80"></div>
-          <div className="e102_81"></div>
-          <div className="e102_78"></div>
-          <span className="e121_14">24</span>
-          <span className="e121_15">31</span>
-          <span className="e121_16">05</span>
-          <div className="e121_17"></div>
-          <div className="e121_18"></div>
-          <div className="e121_19"></div>
+          <input
+            type="date"
+            className="e121_17"
+            value={returningDate}
+            min={borrowingDate}
+            onChange={(e) => setReturningDate(e.target.value)}
+          />
         </div>
         <div
           className="e102_64"

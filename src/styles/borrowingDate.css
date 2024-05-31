@@ -173,6 +173,13 @@ body {
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
+  font-size: 25px;
+  text-align: center;
+  font-family: "Kumbh Sans";
+}
+.e102_75::-webkit-calendar-picker-indicator {
+  font-size: 15px;
+  padding-right: 20px;
 }
 .e102_76 {
   border: 1px solid rgba(0, 0, 0, 1);
@@ -185,6 +192,13 @@ body {
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
+  font-size: 25px;
+  text-align: center;
+  font-family: "Kumbh Sans";
+}
+.e102_76::-webkit-calendar-picker-indicator {
+  font-size: 15px;
+  padding-right: 20px;
 }
 .e102_59 {
   color: rgba(0, 0, 0, 1);
@@ -215,8 +229,8 @@ body {
   width: 289px;
   height: 185px;
   position: absolute;
-  left: 12%; 
-  top: 5%; 
+  left: 12%;
+  top: 5%;
   font-family: Kumbh Sans;
   text-align: left;
   font-size: 30px;
@@ -338,6 +352,13 @@ body {
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
+  font-size: 25px;
+  text-align: center;
+  font-family: "Kumbh Sans";
+}
+.e121_17::-webkit-inner-spin-button,
+.e121_17::-webkit-calendar-picker-indicator {
+  display: none;
 }
 .e121_18 {
   transform: rotate(90deg);
