@@ -26,7 +26,7 @@ body {
   cursor: pointer;
 }
 
-/* main css in student room.css */
+/* main css in studentRoom.css */
 .e28_45 {
   overflow: hidden;
   background-color: rgba(255, 255, 255, 1);
@@ -42,10 +42,7 @@ body {
   position: absolute;
   left: 577px;
   top: 557px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-radius: 20px;
 }
 
 .e28_47 {
@@ -55,14 +52,11 @@ body {
   position: absolute;
   left: 773px;
   top: 120px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  background-image: url("https://gi.esmplus.com/untteutmax/webprogramming/earphone.jpeg");
+  border-radius: 20px;
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
+  z-index: 2;
 }
 
 .e28_48 {
@@ -72,14 +66,39 @@ body {
   position: absolute;
   left: 1168px;
   top: 120px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  background-image: url("https://gi.esmplus.com/untteutmax/webprogramming/ruler.jpeg");
+  border-radius: 20px;
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
+}
+
+.e28_64 {
+  display: block; /* 기본 상태에서 보이도록 수정 */
+  background-color: rgba(9, 9, 9, 0.8); /* 검정색 레이어 */
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 20px;
+  z-index: 5;
+}
+
+.e28_48 .e28_64 {
+  display: block; /* 호버 상태에서 변하지 않도록 유지 */
+}
+
+.e28_64::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  border-left: 40px solid white;
 }
 
 .e28_50 {
@@ -96,7 +115,7 @@ body {
 
 .e28_51 {
   color: rgba(0, 0, 0, 1);
-  width: 333px;
+  width: 289px;
   height: 74px;
   position: absolute;
   left: 380px;
@@ -108,11 +127,11 @@ body {
 
 .e28_52 {
   color: rgba(0, 0, 0, 1);
-  width: 500px;
+  width: 300px;
   height: 37px;
   position: absolute;
   left: 380px;
-  top: 512px;
+  top: 510px;
   font-family: Kumbh Sans;
   text-align: left;
   font-size: 30px;
@@ -134,13 +153,13 @@ body {
 
 .e28_54 {
   color: rgba(0, 0, 0, 1);
-  width: 30px;
+  width: 35px;
   height: 37px;
   position: absolute;
-  left: 601px;
+  left: 598px;
   top: 557px;
   font-family: Kumbh Sans;
-  text-align: left;
+  text-align: center;
   font-size: 30px;
   letter-spacing: 0;
 }
@@ -151,19 +170,9 @@ body {
   position: absolute;
   left: 977px;
   top: 557px;
-  background-color: rgba(165, 165, 165, 0.8);
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
-
-.e28_56 {
-  width: 150px;
-  height: 40px;
-  position: absolute;
-  left: 0px;
-  top: 0px;
+  background-color: rgba(204, 200, 197, 0.8);
+  border-radius: 20px;
+  z-index: 3;
 }
 
 .e28_58 {
@@ -185,40 +194,14 @@ body {
   position: absolute;
   left: 1371px;
   top: 557px;
-  background-color: rgba(247, 195, 55, 0.8);
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
-
-.e28_60 {
-  width: 150px;
-  height: 40px;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-}
-
-.e28_61 {
-  background-color: rgba(247, 195, 55, 0.8);
-  width: 150px;
-  height: 40px;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
 }
 
 .e28_62 {
   color: rgba(255, 255, 255, 1);
-  width: 44px;
+  width: 70px;
   height: 25px;
   position: absolute;
-  left: 53px;
+  left: 40px;
   top: 8px;
   font-family: Kumbh Sans;
   text-align: center;
@@ -226,42 +209,49 @@ body {
   letter-spacing: 0;
 }
 
-/* layer of selection button of ruler */
-.e28_63,
-.e28_64 {
-  display: none;
-  background-color: rgba(9, 9, 9, 0.8);
-  width: 373px;
-  height: 500px;
+.e32_85 {
+  width: 30px;
+  height: 30px;
+  background: #ffffff;
+  border-radius: 1px;
+  transform: rotate(90deg);
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
   position: absolute;
-  border-radius: 20px;
-  z-index: 10;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
 }
 
-.e28_47:hover .e28_63,
-.e28_48:hover .e28_64 {
-  display: block;
-}
-
-.e32_101 {
-  position: absolute;
+.e32_87 {
+  border: 1px solid rgba(0, 0, 0, 1);
   width: 78px;
   height: 25px;
+  position: absolute;
+  border-radius: 40px;
   left: 380px;
   top: 120px;
-  border: 1px solid rgba(0, 0, 0, 1);
-  border-radius: 40px;
   cursor: pointer;
 }
 
 .e32_104 {
-  position: absolute;
   width: 15px;
   height: 15px;
   background: #000000;
   border-radius: 1px;
+  transform: rotate(-90deg);
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(-90deg);
-  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+}
+.e32_101 {
+  border: 1px solid rgba(0, 0, 0, 1);
+  width: 78px;
+  height: 25px;
+  position: absolute;
+  border-radius: 40px;
+  left: 380px;
+  top: 120px;
+  cursor: pointer;
 }

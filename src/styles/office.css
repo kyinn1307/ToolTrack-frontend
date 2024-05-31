@@ -1,14 +1,15 @@
 body {
   background: #e5e5e5;
 }
+
 /* header */
 .e1_4 {
   position: relative;
   width: 1920px;
   height: 70px;
-
   background-color: #ffffff;
 }
+
 /* website name */
 .e1_7 {
   position: absolute;
@@ -33,6 +34,7 @@ body {
   height: 740px;
   position: absolute;
 }
+
 .e19_15 {
   border: 1px solid rgba(0, 0, 0, 1);
   width: 78px;
@@ -40,69 +42,52 @@ body {
   position: absolute;
   left: 577px;
   top: 557px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-radius: 20px;
 }
 
 .e19_16 {
-  background-color: rgba(
-    217.0000022649765,
-    217.0000022649765,
-    217.0000022649765,
-    1
-  );
+  background-color: rgba(217, 217, 217, 1);
   width: 373px;
   height: 500px;
   position: absolute;
   left: 773px;
   top: 120px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-radius: 20px;
   background-image: url(https://gi.esmplus.com/untteutmax/webprogramming/calculator.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
+  z-index: 2;
 }
+
 .e19_17 {
-  background-color: rgba(
-    217.0000022649765,
-    217.0000022649765,
-    217.0000022649765,
-    1
-  );
+  background-color: rgba(217, 217, 217, 1);
   width: 373px;
   height: 500px;
   position: absolute;
   left: 1168px;
   top: 120px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  background-image: url(https://gi.esmplus.com/untteutmax/webprogramming/blanket.jpeg);
+  border-radius: 20px;
+  background-image: url(https://gi.esmplus.com/untteutmax/webprogramming/preventiveMedicine.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
 }
 
-.e19_33,
 .e19_32 {
-  display: none;
+  display: block; /* 기본 상태에서 보이도록 수정 */
+  background-color: rgba(9, 9, 9, 0.8); /* 검정색 레이어 */
+  width: 100%;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 10;
+  border-radius: 20px;
+  z-index: 5;
 }
 
-.e19_16:hover .e19_33,
-.e19_17:hover .e19_32 {
-  display: block;
+.e19_17 .e19_32 {
+  display: block; /* 호버 상태에서 변하지 않도록 유지 */
 }
 
 .e19_19 {
@@ -116,6 +101,19 @@ body {
   font-size: 50px;
   letter-spacing: 0;
 }
+.e19_32::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  border-left: 40px solid white;
+}
+
 .e19_20 {
   color: rgba(0, 0, 0, 1);
   width: 289px;
@@ -127,6 +125,7 @@ body {
   font-size: 30px;
   letter-spacing: 0;
 }
+
 .e19_21 {
   color: rgba(0, 0, 0, 1);
   width: 300px;
@@ -139,6 +138,7 @@ body {
   font-size: 30px;
   letter-spacing: 0;
 }
+
 .e19_22 {
   color: rgba(0, 0, 0, 1);
   width: 135px;
@@ -151,6 +151,7 @@ body {
   font-size: 30px;
   letter-spacing: 0;
 }
+
 .e19_23 {
   color: rgba(0, 0, 0, 1);
   width: 35px;
@@ -163,6 +164,7 @@ body {
   font-size: 30px;
   letter-spacing: 0;
 }
+
 .e19_24 {
   width: 150px;
   height: 40px;
@@ -170,30 +172,26 @@ body {
   left: 977px;
   top: 557px;
 }
+
 .e19_25 {
   width: 150px;
   height: 40px;
   position: absolute;
   left: 0px;
   top: 0px;
+  z-index: 3;
 }
+
 .e19_26 {
-  background-color: rgba(
-    190.0000038743019,
-    177.0000046491623,
-    168.0000051856041,
-    0.800000011920929
-  );
+  background-color: rgba(190, 177, 168, 0.8);
   width: 150px;
   height: 40px;
   position: absolute;
   left: 0px;
   top: 0px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-radius: 20px;
 }
+
 .e19_27 {
   color: rgba(255, 255, 255, 1);
   width: 90px;
@@ -206,6 +204,7 @@ body {
   font-size: 20px;
   letter-spacing: 0;
 }
+
 .e19_28 {
   width: 150px;
   height: 40px;
@@ -213,6 +212,7 @@ body {
   left: 1371px;
   top: 557px;
 }
+
 .e19_29 {
   width: 150px;
   height: 40px;
@@ -220,23 +220,17 @@ body {
   left: 0px;
   top: 0px;
 }
+
 .e19_30 {
-  background-color: rgba(
-    106.00000128149986,
-    75.00000312924385,
-    46.000001057982445,
-    0.800000011920929
-  );
+  background-color: rgba(106, 75, 46, 0.8);
   width: 150px;
   height: 40px;
   position: absolute;
   left: 0px;
   top: 0px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-radius: 20px;
 }
+
 .e19_31 {
   color: rgba(255, 255, 255, 1);
   width: 70px;
@@ -250,51 +244,17 @@ body {
   letter-spacing: 0;
 }
 
-.e19_32 {
-  display: none;
-  background-color: rgba(
-    9.36328087002039,
-    9.315428137779236,
-    9.315428137779236,
-    0.800000011920929
-  );
-  width: 100%;
-  height: 100%;
-  position: relative;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
-.e19_33 {
-  display: none;
-  background-color: rgba(
-    9.36328087002039,
-    9.315428137779236,
-    9.315428137779236,
-    0.800000011920929
-  );
-  width: 100%;
-  height: 100%;
-  position: relative;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
-
 .e32_85 {
-  /* Polygon 3 */
   width: 15px;
   height: 15px;
   background: #000000;
   border-radius: 1px;
   transform: rotate(-90deg);
   clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
-  position: absolute; /* 자식 div를 절대 위치로 설정 */
+  position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) rotate(-90deg); /* 중앙에 배치하고 회전 유지 */
+  transform: translate(-50%, -50%) rotate(-90deg);
 }
 
 .e32_87 {
@@ -302,10 +262,7 @@ body {
   width: 78px;
   height: 25px;
   position: absolute;
-  border-top-left-radius: 40px;
-  border-top-right-radius: 40px;
-  border-bottom-left-radius: 40px;
-  border-bottom-right-radius: 40px;
+  border-radius: 40px;
   left: 380px;
   top: 120px;
   cursor: pointer;

@@ -1,38 +1,49 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../src/styles/studentRoom.css";
 
 const StudentRoomPage = () => {
   const navigate = useNavigate();
 
-  const [hoveredItem, setHoveredItem] = useState(null);
-  const [lastHoveredItem, setLastHoveredItem] = useState("earphone");
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [previousImageIndex, setPreviousImageIndex] = useState(2);
 
   const items = {
     earphone: 12,
-    ruler: 8, // ruler의 개수를 실제 값으로 설정하세요.
+    ruler: 8,
+    tissue: 10,
   };
 
+  const images = [
+    {
+      src: "https://gi.esmplus.com/untteutmax/webprogramming/earphone.jpeg",
+      name: "earphone",
+    },
+    {
+      src: "https://gi.esmplus.com/untteutmax/webprogramming/ruler.jpeg",
+      name: "ruler",
+    },
+    {
+      src: "https://gi.esmplus.com/untteutmax/webprogramming/tissue.jpg",
+      name: "tissue",
+    },
+  ];
+
   const handleBackButtonClick = () => {
-    navigate("/roomselection"); // Use navigate to change the route
+    navigate("/roomselection");
   };
 
   const handleItemButtonClick = (item) => {
     navigate(`/borrowing/${item}`, { state: { from: "studentroom" } });
-  }; // go to borrowing item page with state that items belong to
-
-  const handleMouseEnter = (item) => {
-    setHoveredItem(item);
-    setLastHoveredItem(item);
   };
 
-  const handleMouseLeave = () => {
-    setHoveredItem(null);
+  const handleImageClick = () => {
+    setPreviousImageIndex(currentImageIndex);
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
   };
 
-  useEffect(() => {
-    setLastHoveredItem("earphone");
-  }, []);
+  const currentItem = images[currentImageIndex].name;
+  const previousItem = images[previousImageIndex].name;
 
   return (
     <div>
@@ -46,22 +57,18 @@ const StudentRoomPage = () => {
         <div className="e28_46"></div>
         <div
           className="e28_47"
-          id="earphone_button"
-          onClick={() => handleItemButtonClick("earphone")}
-          onMouseEnter={() => handleMouseEnter("earphone")}
-          onMouseLeave={handleMouseLeave}
-        >
-          <div className="e28_63"></div>
-        </div>
+          id="image-box"
+          onClick={() => handleItemButtonClick(currentItem)}
+          style={{ backgroundImage: `url(${images[currentImageIndex].src})` }}
+        ></div>
         <div
           className="e28_48"
-          id="ruler_button"
-          onClick={() => handleItemButtonClick("ruler")}
-          onMouseEnter={() => handleMouseEnter("ruler")}
-          onMouseLeave={handleMouseLeave}
+          onClick={handleImageClick}
+          style={{ backgroundImage: `url(${images[previousImageIndex].src})` }}
         >
           <div className="e28_64"></div>
         </div>
+
         <span className="e28_50">
           Which <b>tool</b> do you want?
         </span>
@@ -70,26 +77,19 @@ const StudentRoomPage = () => {
         </span>
         <span className="e28_52">Remaining number</span>
         <span className="e28_53" id="item_name">
-          {hoveredItem ? hoveredItem : lastHoveredItem ? lastHoveredItem : ""}
+          {currentItem}
         </span>
         <span className="e28_54" id="item_remain_num">
-          {hoveredItem ? items[hoveredItem] : lastHoveredItem ? items[lastHoveredItem] : ""}
+          {items[currentItem]}
         </span>
         <div
           className="e28_55"
-          onClick={() => handleItemButtonClick("earphone")}
-          onMouseEnter={() => handleMouseEnter("earphone")}
-          onMouseLeave={handleMouseLeave}
+          onClick={() => handleItemButtonClick(currentItem)}
         >
-          <span className="e28_58">earphone</span>
+          <span className="e28_58">{currentItem}</span>
         </div>
-        <div
-          className="e28_59"
-          onClick={() => handleItemButtonClick("ruler")}
-          onMouseEnter={() => handleMouseEnter("ruler")}
-          onMouseLeave={handleMouseLeave}
-        >
-          <span className="e28_62">ruler</span>
+        <div className="e28_59">
+          <span className="e28_62">{previousItem}</span>
         </div>
         <div
           className="e32_101"

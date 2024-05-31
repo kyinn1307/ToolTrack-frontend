@@ -4,31 +4,46 @@ import "../src/styles/office.css";
 
 const OfficePage = () => {
   const navigate = useNavigate();
-
-  const [hoveredItem, setHoveredItem] = useState(null);
-  const [lastHoveredItem, setLastHoveredItem] = useState("calculator");
+  const images = [
+    {
+      src: "https://gi.esmplus.com/untteutmax/webprogramming/calculator.jpeg",
+      name: "calculator",
+    },
+    {
+      src: "https://gi.esmplus.com/untteutmax/webprogramming/blanket.jpeg",
+      name: "blanket",
+    },
+    {
+      src: "https://gi.esmplus.com/untteutmax/webprogramming/preventiveMedicine.jpg",
+      name: "medicine",
+    },
+  ];
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [previousImageIndex, setPreviousImageIndex] = useState(
+    images.length - 1
+  ); // 초기값을 마지막 이미지로 설정
 
   const items = {
     calculator: 26,
-    blanket: 10, // need to change
+    blanket: 10,
+    medicine: 15,
   };
 
   const handleBackButtonClick = () => {
-    navigate("/roomselection"); // Use navigate to change the route
+    navigate("/roomselection");
   };
 
   const handleItemButtonClick = (item) => {
     navigate(`/borrowing/${item}`, { state: { from: "office" } });
-  }; // go to borrowing item page with state that items belong to
-
-  const handleMouseEnter = (item) => {
-    setHoveredItem(item);
-    setLastHoveredItem(item);
   };
 
-  const handleMouseLeave = () => {
-    setHoveredItem(null);
+  const handleImageClick = () => {
+    setPreviousImageIndex(currentImageIndex); // 이전 이미지를 현재 이미지로 설정
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length); // 현재 이미지를 다음 이미지로 설정
   };
+
+  const currentItem = images[currentImageIndex].name;
+  const previousItem = images[previousImageIndex].name;
 
   return (
     <div>
@@ -43,20 +58,17 @@ const OfficePage = () => {
         <div
           className="e19_16"
           id="calculator-box"
-          onClick={() => handleItemButtonClick("calculator")}
-          onMouseEnter={() => handleMouseEnter("calculator")}
-          onMouseLeave={handleMouseLeave}
-        >
-          <div className="e19_33"></div>
-        </div>
+          onClick={() => handleItemButtonClick(currentItem)}
+          style={{ backgroundImage: `url(${images[currentImageIndex].src})` }}
+        ></div>
         <div
           className="e19_17"
-          onClick={() => handleItemButtonClick("blanket")}
-          onMouseEnter={() => handleMouseEnter("blanket")}
-          onMouseLeave={handleMouseLeave}
+          onClick={handleImageClick}
+          style={{ backgroundImage: `url(${images[previousImageIndex].src})` }}
         >
           <div className="e19_32"></div>
         </div>
+
         <span className="e19_19">
           Which <b>tool</b> do you want?
         </span>
@@ -65,36 +77,28 @@ const OfficePage = () => {
         </span>
         <span className="e19_21">Remaining number</span>
         <span className="e19_22" id="item_name_mouse">
-          {hoveredItem ? hoveredItem : lastHoveredItem ? lastHoveredItem : ""}
+          {currentItem}
         </span>
         <span className="e19_23" id="item_num_mouse">
-          {hoveredItem
-            ? items[hoveredItem]
-            : lastHoveredItem
-            ? items[lastHoveredItem]
-            : ""}
+          {items[currentItem]}
         </span>
         <div
           className="e19_24"
           onClick={() => handleItemButtonClick("calculator")}
-          onMouseEnter={() => handleMouseEnter("calculator")}
-          onMouseLeave={handleMouseLeave}
         >
           <div className="e19_25">
             <div className="e19_26"></div>
+            <span className="e19_27">{currentItem}</span>
           </div>
-          <span className="e19_27">calculator</span>
         </div>
         <div
           className="e19_28"
           onClick={() => handleItemButtonClick("blanket")}
-          onMouseEnter={() => handleMouseEnter("blanket")}
-          onMouseLeave={handleMouseLeave}
         >
           <div className="e19_29">
             <div className="e19_30"></div>
           </div>
-          <span className="e19_31">blanket</span>
+          <span className="e19_31">{previousItem}</span>
         </div>
         <div
           className="e32_87"
