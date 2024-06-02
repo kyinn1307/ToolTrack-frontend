@@ -71,6 +71,9 @@ const BorrowingPage = () => {
         >
           ITM <b>ToolTrack</b>
         </span>
+        <button type="button" className="e1_9" id="logout-button">
+          logout
+        </button>
       </div>
 
       {item && (

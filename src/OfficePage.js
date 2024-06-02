@@ -51,6 +51,9 @@ const OfficePage = () => {
         <span className="e1_7" id="main-button" onClick={handleBackButtonClick}>
           ITM <b>ToolTrack</b>
         </span>
+        <button type="button" className="e1_9" id="logout-button">
+          logout
+        </button>
       </div>
 
       <div className="e19_14">

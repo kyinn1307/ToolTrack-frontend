@@ -24,6 +24,21 @@ body {
   color: #000000;
   cursor: pointer;
 }
+/* css for logout button */
+.e1_9 {
+  box-sizing: border-box;
+  font-weight: bold;
+  position: absolute;
+  width: 90px;
+  height: 40px;
+  left: 1810px;
+  top: 15px;
+  text-align: center;
+  border: 1px solid #000000;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: #ffffff;
+}
 
 /* main css in roomSelection.css */
 /* css for room selection */
