@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
-import "../src/styles/borrowingDate.css"; // Ensure you have the corresponding CSS file
+import "../src/styles/borrowingDate.css";
 
 const ItemBorrowingDatePage = () => {
   const navigate = useNavigate();
@@ -33,11 +33,51 @@ const ItemBorrowingDatePage = () => {
     handleNavigation(`/borrowing/${item}`, { from });
   };
 
+  const formatDate = (date) => {
+    return date.toISOString().split("T")[0];
+  };
+
+  // useEffect를 사용하여 returningDate가 borrowingDate로부터 최대 14일 이내로 설정되도록 제한합니다.
   useEffect(() => {
+    const maxBorrowingPeriod = 14; // 최대 2주 (14일)
+    const maxReturningDate = new Date(borrowingDate);
+    maxReturningDate.setDate(maxReturningDate.getDate() + maxBorrowingPeriod);
+
     if (returningDate < borrowingDate) {
       setReturningDate(borrowingDate);
+    } else if (new Date(returningDate) > maxReturningDate) {
+      setReturningDate(formatDate(maxReturningDate));
     }
-  }, [borrowingDate]);
+  }, [borrowingDate, returningDate]);
+
+  const handleConfirmClick = async () => {
+    const data = {
+      item,
+      quantity: value,
+      borrowingDate,
+      returningDate,
+    };
+
+    try {
+      const response = await fetch("http://localhost:8000/borrow/", // have to modify the url
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        console.log("Data sent successfully");
+        handleNavigation("/confirm", { from });
+      } else {
+        console.error("Failed to send data:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Error sending data:", error);
+    }
+  };
 
   return (
     <div>
@@ -49,6 +89,9 @@ const ItemBorrowingDatePage = () => {
         >
           ITM <b>ToolTrack</b>
         </span>
+        <button type="button" className="e1_9" id="logout-button">
+          logout
+        </button>
       </div>
       <div className="e102_53">
         <div className="e174_9">
@@ -76,6 +119,13 @@ const ItemBorrowingDatePage = () => {
             className="e102_76"
             value={returningDate}
             min={borrowingDate}
+            max={formatDate(
+              new Date(
+                new Date(borrowingDate).setDate(
+                  new Date(borrowingDate).getDate() + 14
+                )
+              )
+            )} // make a limitation of returning date
             onChange={(e) => setReturningDate(e.target.value)}
           />
           <span className="e102_59">Borrowing date</span>
@@ -84,7 +134,7 @@ const ItemBorrowingDatePage = () => {
           <div
             className="e102_70"
             id="confirm-button"
-            onClick={() => handleNavigation("/confirm")}
+            onClick={handleConfirmClick}
           >
             <div className="e102_61">
               <span className="e102_63">
@@ -97,6 +147,13 @@ const ItemBorrowingDatePage = () => {
             className="e121_17"
             value={returningDate}
             min={borrowingDate}
+            max={formatDate(
+              new Date(
+                new Date(borrowingDate).setDate(
+                  new Date(borrowingDate).getDate() + 14
+                )
+              )
+            )} // make a limitation of returning date
             onChange={(e) => setReturningDate(e.target.value)}
           />
         </div>
