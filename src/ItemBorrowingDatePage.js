@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
 import "../src/styles/borrowingDate.css";
+import Header from "./Header";
 
 const ItemBorrowingDatePage = () => {
   const navigate = useNavigate();
@@ -37,7 +38,7 @@ const ItemBorrowingDatePage = () => {
     return date.toISOString().split("T")[0];
   };
 
-  // useEffect를 사용하여 returningDate가 borrowingDate로부터 최대 14일 이내로 설정되도록 제한합니다.
+  // limit the term between borrowing date and return date
   useEffect(() => {
     const maxBorrowingPeriod = 14; // 최대 2주 (14일)
     const maxReturningDate = new Date(borrowingDate);
@@ -59,14 +60,16 @@ const ItemBorrowingDatePage = () => {
     };
 
     try {
-      const response = await fetch("http://localhost:8000/borrow/", // have to modify the url
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+      const response = await fetch(
+        "http://localhost:8000/borrow/", // have to modify the url
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
 
       if (response.ok) {
         console.log("Data sent successfully");
@@ -81,18 +84,7 @@ const ItemBorrowingDatePage = () => {
 
   return (
     <div>
-      <div className="e1_4">
-        <span
-          className="e1_7"
-          id="main-button"
-          onClick={() => handleNavigation("/roomselection")}
-        >
-          ITM <b>ToolTrack</b>
-        </span>
-        <button type="button" className="e1_9" id="logout-button">
-          logout
-        </button>
-      </div>
+      <Header isLoggedIn={true} /*onLogoutClick={handleLogoutClick}*/ />{" "}
       <div className="e102_53">
         <div className="e174_9">
           <span className="e102_54">Student’s office</span>

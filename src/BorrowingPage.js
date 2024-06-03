@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
 import "../src/styles/borrowing.css";
+import Header from "./Header";
 
 const BorrowingPage = () => {
   const navigate = useNavigate();
@@ -17,17 +18,6 @@ const BorrowingPage = () => {
     tissue: 10,
   };
 
-  // let listOfItems= [
-  //   {calculator: 26,
-  //     blanket: 15,
-  //     earphone: 12,
-  //     ruler: 20,},
-  //     {
-  //       calculator: 26,
-  //       blanket: 15,
-  //       earphone: 12,
-  //       ruler: 20,}
-  // ]
   const images = {
     calculator:
       "https://gi.esmplus.com/untteutmax/webprogramming/calculator.jpeg",
@@ -63,19 +53,7 @@ const BorrowingPage = () => {
 
   return (
     <div>
-      <div className="e1_4">
-        <span
-          className="e1_7"
-          id="main-button"
-          onClick={() => handleNavigation("/roomselection")}
-        >
-          ITM <b>ToolTrack</b>
-        </span>
-        <button type="button" className="e1_9" id="logout-button">
-          logout
-        </button>
-      </div>
-
+      <Header isLoggedIn={true} /*onLogoutClick={handleLogoutClick}*/ />{" "}
       {item && (
         <div className="e102_2">
           <span className="e102_3">Student’s office</span>

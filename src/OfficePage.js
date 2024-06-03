@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../src/styles/office.css";
+import Header from "./Header";
 
 const OfficePage = () => {
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ const OfficePage = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [previousImageIndex, setPreviousImageIndex] = useState(
     images.length - 1
-  ); // 초기값을 마지막 이미지로 설정
+  );
 
   const items = {
     calculator: 26,
@@ -38,8 +39,8 @@ const OfficePage = () => {
   };
 
   const handleImageClick = () => {
-    setPreviousImageIndex(currentImageIndex); // 이전 이미지를 현재 이미지로 설정
-    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length); // 현재 이미지를 다음 이미지로 설정
+    setPreviousImageIndex(currentImageIndex);
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
   };
 
   const currentItem = images[currentImageIndex].name;
@@ -47,15 +48,7 @@ const OfficePage = () => {
 
   return (
     <div>
-      <div className="e1_4">
-        <span className="e1_7" id="main-button" onClick={handleBackButtonClick}>
-          ITM <b>ToolTrack</b>
-        </span>
-        <button type="button" className="e1_9" id="logout-button">
-          logout
-        </button>
-      </div>
-
+      <Header isLoggedIn={true} /*onLogoutClick={handleLogoutClick}*/ />{" "}
       <div className="e19_14">
         <div className="e19_15"></div>
         <div

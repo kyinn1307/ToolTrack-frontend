@@ -1,6 +1,7 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "../src/styles/roomSelection.css";
+import Header from "./Header";
 
 const RoomSelectionPage = () => {
   const navigate = useNavigate();
@@ -25,15 +26,7 @@ const RoomSelectionPage = () => {
 
   return (
     <div>
-      <div className="e1_4">
-        <span className="e1_7" id="main-button">
-          ITM <b>ToolTrack</b>
-        </span>
-        <button type="button" className="e1_9" id="logout-button">
-          logout
-        </button>
-      </div>
-
+      <Header isLoggedIn={true} /*onLogoutClick={handleLogoutClick}*/ />{" "}
       <div className="e5_74">
         <div className="e5_87" id="office-button" onClick={officeClick}>
           <div className="e5_96" id="office-onmouse"></div>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../src/styles/studentRoom.css";
+import Header from "./Header";
 
 const StudentRoomPage = () => {
   const navigate = useNavigate();
@@ -46,16 +47,8 @@ const StudentRoomPage = () => {
   const previousItem = images[previousImageIndex].name;
 
   return (
-    <div>
-      <div className="e1_4">
-        <span className="e1_7" id="main-button" onClick={handleBackButtonClick}>
-          ITM <b>ToolTrack</b>
-        </span>
-        <button type="button" className="e1_9" id="logout-button">
-          logout
-        </button>
-      </div>
-
+    <div className="e1_1">
+      <Header isLoggedIn={true} /*onLogoutClick={handleLogoutClick}*/ />{" "}
       <div className="e28_45">
         <div className="e28_46"></div>
         <div

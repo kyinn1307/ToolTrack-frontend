@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../src/styles/login.css";
+import Header from "./Header"; // 헤더 컴포넌트 불러오기
 
 const LoginPage = () => {
   const [studentId, setStudentId] = useState("");
@@ -20,7 +21,7 @@ const LoginPage = () => {
   }, []);
 
   const handleSignUpClick = () => {
-    navigate("/signup"); // Use navigate to change the route
+    navigate("/signup");
   };
 
   const handleLoginClick = async (e) => {
@@ -40,17 +41,12 @@ const LoginPage = () => {
     } else if (!pwValue) {
       alert("Please enter your Password.");
     } else {
-      // const csrfToken = document.querySelector(
-      //   "input[name='csrfmiddlewaretoken']"
-      // ).value;
-
       const data = { studentId: idValue, password: pwValue };
       try {
         const response = await fetch("http://localhost:8000/login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            // "X-CSRFToken": csrfToken,
           },
           body: JSON.stringify(data),
         });
@@ -69,17 +65,13 @@ const LoginPage = () => {
     }
   };
 
-  return (
-    <div>
-      <div className="e1_4">
-        <span className="e1_7" id="main-button">
-          ITM <b>ToolTrack</b>
-        </span>
-        <button type="button" className="e1_8" id="login-button">
-          login
-        </button>
-      </div>
+  const handleLoginButtonClick = () => {
+    navigate("/signup");
+  };
 
+  return (
+    <div className="container">
+      <Header isLoggedIn={false} onLoginClick={handleLoginButtonClick} />{" "}
       <div className="e1_11">
         <span className="e1_14">
           Welcome to ITM <b>ToolTrack</b>!
@@ -102,7 +94,7 @@ const LoginPage = () => {
             className="e1_31"
             id="login-form-submit"
             value="log-in"
-            onClick={handleLoginClick} // Added onClick event to handle login
+            onClick={handleLoginClick}
           />
         </div>
         <div className="e1_20">
@@ -123,7 +115,7 @@ const LoginPage = () => {
             maxLength="8"
             required
             value={studentId}
-            onChange={(e) => setStudentId(e.target.value)} // Added onChange event to update state
+            onChange={(e) => setStudentId(e.target.value)}
           />
           <input
             type="password"
@@ -133,7 +125,7 @@ const LoginPage = () => {
             maxLength="20"
             required
             value={password}
-            onChange={(e) => setPassword(e.target.value)} // Added onChange event to update state
+            onChange={(e) => setPassword(e.target.value)}
           />
         </form>
       </div>
