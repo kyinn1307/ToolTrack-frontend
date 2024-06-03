@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
 import "../src/styles/borrowing.css";
 import Header from "./Header";
@@ -8,15 +8,32 @@ const BorrowingPage = () => {
   const { item } = useParams();
   const location = useLocation();
   const from = location.state?.from;
+  const student = location.state?.student || {};
+  const [items, setItems] = useState({});
+  const [studentId, setStudentId] = useState(student.studentId || "");
+  const roomId = from === "office" ? 502 : 302;
 
-  const items = {
-    calculator: 26,
-    blanket: 10,
-    medicine: 15,
-    earphone: 12,
-    ruler: 8,
-    tissue: 10,
-  };
+  useEffect(() => {
+    const fetchItems = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost:8000/get_items_by_room?roomId=${roomId}`
+        );
+        const data = await response.json();
+        console.log(data);
+        setItems(
+          data.reduce((acc, item) => {
+            acc[item.name.toLowerCase()] = item.amount;
+            return acc;
+          }, {})
+        );
+      } catch (error) {
+        console.error("Error fetching items:", error);
+      }
+    };
+
+    fetchItems();
+  }, [roomId]);
 
   const images = {
     calculator:
@@ -33,27 +50,46 @@ const BorrowingPage = () => {
   const itemCount = item ? items[item] : 0;
   const itemImage = item ? images[item] : "";
 
-  const handleNavigation = (path, state) => {
-    navigate(path, { state });
-  };
-
   const handleBackClick = () => {
     if (from === "office") {
-      navigate("/office");
+      navigate("/office", { state: { student } });
     } else if (from === "studentroom") {
-      navigate("/studentroom");
+      navigate("/studentroom", { state: { student } });
     } else {
-      navigate("/roomselection");
+      navigate("/roomselection", { state: { student } });
     }
   };
 
-  const handleBorrowClick = () => {
-    handleNavigation(`/borrowing/date/${item}`, { from });
+  const handleBorrowClick = async () => {
+    const data = {
+      itemId: item,
+      studentId: studentId,
+      roomId: roomId,
+      itemName: itemName,
+    };
+
+    try {
+      const response = await fetch("http://localhost:8000/borrow/items", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        console.log("Item borrowed successfully");
+      } else {
+        console.error("Failed to borrow item:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Error during item borrowing:", error);
+    }
   };
 
   return (
     <div>
-      <Header isLoggedIn={true} /*onLogoutClick={handleLogoutClick}*/ />{" "}
+      <Header isLoggedIn={true} />
       {item && (
         <div className="e102_2">
           <span className="e102_3">

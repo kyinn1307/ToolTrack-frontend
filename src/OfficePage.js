@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams, useLocation } from "react-router-dom";
 import "../src/styles/office.css";
 import Header from "./Header";
 
 const OfficePage = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const student = location.state?.student || {};
   const images = [
     {
       src: "https://gi.esmplus.com/untteutmax/webprogramming/calculator.jpeg",
@@ -31,11 +33,11 @@ const OfficePage = () => {
   };
 
   const handleBackButtonClick = () => {
-    navigate("/roomselection");
+    navigate("/roomselection", { state: { student } });
   };
 
   const handleItemButtonClick = (item) => {
-    navigate(`/borrowing/${item}`, { state: { from: "office" } });
+    navigate(`/borrowing/${item}`, { state: { from: "office", student } });
   };
 
   const handleImageClick = () => {
@@ -70,13 +72,6 @@ const OfficePage = () => {
         </span>
         <span className="e19_20">
           Now you can borrow from the <b>office</b>
-        </span>
-        <span className="e19_21">Remaining number</span>
-        <span className="e19_22" id="item_name_mouse">
-          {currentItem}
-        </span>
-        <span className="e19_23" id="item_num_mouse">
-          {items[currentItem]}
         </span>
         <div
           className="e19_24"

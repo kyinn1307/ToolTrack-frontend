@@ -1,19 +1,15 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams, useLocation } from "react-router-dom";
 import "../src/styles/studentRoom.css";
 import Header from "./Header";
 
 const StudentRoomPage = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const student = location.state?.student || {};
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [previousImageIndex, setPreviousImageIndex] = useState(2);
-
-  const items = {
-    earphone: 12,
-    ruler: 8,
-    tissue: 10,
-  };
 
   const images = [
     {
@@ -31,11 +27,11 @@ const StudentRoomPage = () => {
   ];
 
   const handleBackButtonClick = () => {
-    navigate("/roomselection");
+    navigate("/roomselection", { state: { student } });
   };
 
   const handleItemButtonClick = (item) => {
-    navigate(`/borrowing/${item}`, { state: { from: "studentroom" } });
+    navigate(`/borrowing/${item}`, { state: { from: "studentroom", student } });
   };
 
   const handleImageClick = () => {
@@ -70,13 +66,6 @@ const StudentRoomPage = () => {
         </span>
         <span className="e28_51">
           Now you can borrow from the <b>students room</b>
-        </span>
-        <span className="e28_52">Remaining number</span>
-        <span className="e28_53" id="item_name">
-          {currentItem}
-        </span>
-        <span className="e28_54" id="item_remain_num">
-          {items[currentItem]}
         </span>
         <div
           className="e28_55"

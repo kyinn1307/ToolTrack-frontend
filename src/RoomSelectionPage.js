@@ -9,11 +9,11 @@ const RoomSelectionPage = () => {
   const student = location.state?.student || {};
 
   const officeClick = () => {
-    navigate("/office");
+    navigate("/office", { state: { student } });
   };
 
   const studentRoomClick = () => {
-    navigate("/studentroom");
+    navigate("/studentroom", { state: { student } });
   };
 
   const handleAddItemClick = () => {
@@ -59,20 +59,6 @@ const RoomSelectionPage = () => {
           </div>
           <span className="e8_113">student room</span>
         </div>
-        {student.isAdmin && (
-          <div className="button-container">
-            <button type="button" className="e1_8" onClick={handleAddItemClick}>
-              Add Item
-            </button>
-            <button
-              type="button"
-              className="e1_8"
-              onClick={handleRemoveItemClick}
-            >
-              Remove Item
-            </button>
-          </div>
-        )}
       </div>
     </div>
   );
