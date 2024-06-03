@@ -1,58 +1,17 @@
-body {
-  background: #e5e5e5;
-}
-/* header */
-.e1_4 {
-  position: relative;
-  width: 1920px;
-  height: 70px;
-
-  background-color: #ffffff;
-}
-/* website name */
-.e1_7 {
-  position: absolute;
-  width: 198px;
-  height: 37px;
-  left: 20px;
-  top: 16px;
-  font-family: "Kumbh Sans";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 30px;
-  line-height: 37px;
-  color: #000000;
-  cursor: pointer;
-}
-/* login group */
-.e1_8 {
-  box-sizing: border-box;
-  font-weight: bold;
-  position: absolute;
-  width: 90px;
-  height: 40px;
-  left: 1810px;
-  top: 15px;
-  text-align: center;
-  border: 1px solid #000000;
-  border-radius: 20px;
-  cursor: pointer;
-  background-color: #ffffff;
-}
-
 /* main css in SignUp.css */
 .e28_6 {
   overflow: hidden;
   background-color: rgba(255, 255, 255, 1);
-  width: 1920px;
+  width: 100%;
   height: 580px;
   position: absolute;
+  display: flex;
+  justify-content: center;
 }
 .e28_25 {
   width: 964px;
   height: 65px;
   position: absolute;
-  left: 478px;
   top: 220px;
   background-color: rgba(
     217.0000022649765,
@@ -98,7 +57,7 @@ body {
   width: 964px;
   height: 65px;
   position: absolute;
-  left: 478px;
+
   top: 324px;
   background-color: rgba(
     217.0000022649765,
@@ -141,7 +100,7 @@ body {
   width: 275px;
   height: 65px;
   position: absolute;
-  left: 823px;
+
   top: 455px;
   border: 1px solid rgba(0, 0, 0, 1);
   border-top-left-radius: 40px;
@@ -182,6 +141,11 @@ body {
   cursor: pointer;
 }
 
+#signup-form {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+}
 .e28_27 {
   width: 964px;
   height: 65px;
@@ -189,7 +153,7 @@ body {
   justify-content: center; /* 가로 가운데 정렬 */
   align-items: center; /* 세로 가운데 정렬 */
   position: absolute;
-  left: 484px;
+
   top: 116px;
   background-color: rgba(
     217.0000022649765,
@@ -230,7 +194,6 @@ body {
   width: 700px;
   height: 60px;
   position: absolute;
-  left: 611px;
   top: 20px;
   text-align: center;
   font-size: 50px;

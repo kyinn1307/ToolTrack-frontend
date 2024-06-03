@@ -1,46 +1,3 @@
-body {
-  background: #e5e5e5;
-}
-
-/* header */
-.e1_4 {
-  position: relative;
-  width: 1920px;
-  height: 70px;
-  background-color: #ffffff;
-}
-
-/* website name */
-.e1_7 {
-  position: absolute;
-  width: 198px;
-  height: 37px;
-  left: 20px;
-  top: 16px;
-  font-family: "Kumbh Sans";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 30px;
-  line-height: 37px;
-  color: #000000;
-  cursor: pointer;
-}
-/* css for logout button */
-.e1_9 {
-  box-sizing: border-box;
-  font-weight: bold;
-  position: absolute;
-  width: 90px;
-  height: 40px;
-  left: 1810px;
-  top: 15px;
-  text-align: center;
-  border: 1px solid #000000;
-  border-radius: 20px;
-  cursor: pointer;
-  background-color: #ffffff;
-}
-
 /* main css in office.css */
 .e19_14 {
   overflow: hidden;
@@ -73,6 +30,9 @@ body {
   background-size: cover;
   cursor: pointer;
   z-index: 2;
+}
+.e19_16:hover {
+  transform: scale(1.03); /* Slightly enlarge the button on hover */
 }
 
 .e19_17 {

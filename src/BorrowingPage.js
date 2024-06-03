@@ -14,7 +14,7 @@ const BorrowingPage = () => {
     blanket: 10,
     medicine: 15,
     earphone: 12,
-    ruler: 20,
+    ruler: 8,
     tissue: 10,
   };
 
@@ -56,7 +56,9 @@ const BorrowingPage = () => {
       <Header isLoggedIn={true} /*onLogoutClick={handleLogoutClick}*/ />{" "}
       {item && (
         <div className="e102_2">
-          <span className="e102_3">Student’s office</span>
+          <span className="e102_3">
+            {from === "office" ? "Office" : "Student Room"}
+          </span>
           <span className="e102_6">{itemName}</span>
           <div
             className="e102_22"

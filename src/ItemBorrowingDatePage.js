@@ -54,7 +54,7 @@ const ItemBorrowingDatePage = () => {
   const handleConfirmClick = async () => {
     const data = {
       item,
-      quantity: value,
+      quantity: value, // have to modify the variable name
       borrowingDate,
       returningDate,
     };
@@ -87,7 +87,9 @@ const ItemBorrowingDatePage = () => {
       <Header isLoggedIn={true} /*onLogoutClick={handleLogoutClick}*/ />{" "}
       <div className="e102_53">
         <div className="e174_9">
-          <span className="e102_54">Student’s office</span>
+          <span className="e102_54">
+            {from === "office" ? "Office" : "Student Room"}
+          </span>
           <span className="e102_55">
             {item.charAt(0).toUpperCase() + item.slice(1)}
           </span>

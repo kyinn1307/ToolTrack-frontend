@@ -65,68 +65,71 @@ const LoginPage = () => {
     }
   };
 
-  const handleLoginButtonClick = () => {
-    navigate("/signup");
-  };
-
   return (
     <div className="container">
-      <Header isLoggedIn={false} onLoginClick={handleLoginButtonClick} />{" "}
+      <Header isLoggedIn={false} />{" "}
       <div className="e1_11">
         <span className="e1_14">
           Welcome to ITM <b>ToolTrack</b>!
         </span>
-        <span className="e1_16">ID </span>
-        <span className="e1_17">PW </span>
-        <div className="e1_27">
-          <button
-            type="button"
-            className="e1_30"
-            id="sign-up-button"
-            onClick={handleSignUpClick}
-          >
-            sign-up
-          </button>
-        </div>
-        <div className="e1_29">
-          <input
-            type="submit"
-            className="e1_31"
-            id="login-form-submit"
-            value="log-in"
-            onClick={handleLoginClick}
-          />
+
+        <div>
+          <div className="e1_27">
+            <button
+              type="button"
+              className="e1_30"
+              id="sign-up-button"
+              onClick={handleSignUpClick}
+            >
+              sign-up
+            </button>
+          </div>
+          <div className="e1_29">
+            <input
+              type="submit"
+              className="e1_31"
+              id="login-form-submit"
+              value="log-in"
+              onClick={handleLoginClick}
+            />
+          </div>
         </div>
         <div className="e1_20">
           <div className="e1_18"></div>
           <span className="e1_19">only for ITM students</span>
         </div>
         <form className="e1_12" id="login-form" method="POST">
+          <div className="ID_class">
+            <span className="e1_16">ID </span>{" "}
+            <input
+              type="text"
+              className="e1_21"
+              name="ID"
+              placeholder="Student Number"
+              maxLength="8"
+              required
+              value={studentId}
+              onChange={(e) => setStudentId(e.target.value)}
+            />
+          </div>
           <input
             type="hidden"
             name="csrfmiddlewaretoken"
             value="{{ csrf_token }}"
           />
-          <input
-            type="text"
-            className="e1_21"
-            name="ID"
-            placeholder="Student Number"
-            maxLength="8"
-            required
-            value={studentId}
-            onChange={(e) => setStudentId(e.target.value)}
-          />
-          <input
-            type="password"
-            className="e1_26"
-            name="Password"
-            placeholder="PW"
-            maxLength="20"
-            required
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
+          <div className="PW_class">
+            <span className="e1_17">PW </span>
+            <input
+              type="password"
+              className="e1_26"
+              name="Password"
+              placeholder="PW"
+              maxLength="20"
+              required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
         </form>
       </div>
     </div>
