@@ -5,8 +5,8 @@ import "../src/styles/addItem.css";
 const AddItemPage = () => {
   const [name, setName] = useState("");
   const [available, setAvailable] = useState(true);
-  const [holderId, setHolderId] = useState(0);
-  const [roomId, setRoomId] = useState(302);
+  const [amount, setAmount] = useState(0);
+  const [roomId, setRoomId] = useState(502);
   const navigate = useNavigate();
   const location = useLocation();
   const student = location.state?.student || {};
@@ -14,7 +14,7 @@ const AddItemPage = () => {
   const handleAddItem = async (e) => {
     e.preventDefault();
 
-    const data = { name, available, holderId, roomId };
+    const data = { name, available, amount, roomId };
 
     try {
       const response = await fetch("http://localhost:8000/items/add", {
@@ -26,9 +26,10 @@ const AddItemPage = () => {
       });
 
       if (response.ok) {
-        console.log("Item added successfully");
+        alert("Item added successfully");
         navigate("/roomselection", { state: { student } });
       } else {
+        alert("Failed to add item:");
         console.error("Failed to add item:", response.statusText);
       }
     } catch (error) {
@@ -57,16 +58,21 @@ const AddItemPage = () => {
         </label>
         <input
           type="number"
-          placeholder="Holder ID"
-          value={holderId}
-          onChange={(e) => setHolderId(Number(e.target.value))}
+          placeholder="Amount"
+          value={amount}
+          onChange={(e) => setAmount(Number(e.target.value))}
         />
-        <input
-          type="number"
-          placeholder="Room ID"
-          value={roomId}
-          onChange={(e) => setRoomId(Number(e.target.value))}
-        />
+        <label>
+          Room ID:
+          <select
+            value={roomId}
+            onChange={(e) => setRoomId(Number(e.target.value))}
+            required
+          >
+            <option value={302}>302</option>
+            <option value={502}>502</option>
+          </select>
+        </label>
         <button type="submit">Add Item</button>
       </form>
     </div>

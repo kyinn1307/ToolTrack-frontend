@@ -1,32 +1,3 @@
-body {
-  background: #e5e5e5;
-}
-/* header */
-.e1_4 {
-  position: relative;
-  width: 1920px;
-  height: 70px;
-
-  background-color: #ffffff;
-}
-/* website name */
-.e1_7 {
-  position: absolute;
-  width: 198px;
-  height: 37px;
-  left: 20px;
-  top: 16px;
-  font-family: "Kumbh Sans";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 30px;
-  line-height: 37px;
-  color: #000000;
-  cursor: pointer;
-}
-
-
-
 /* main css code in borrowing.css */
 .e102_2 {
   overflow: hidden;
@@ -173,4 +144,17 @@ body {
   height: 100%;
   border-radius: 20px;
   object-fit: cover;
+}
+
+.no-remaining {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: none;
+  font-size: 30px;
+  color: #888;
+  text-align: center;
+  font-weight: bolder;
 }

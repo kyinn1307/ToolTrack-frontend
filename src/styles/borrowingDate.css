@@ -1,32 +1,4 @@
-body {
-  background: #e5e5e5;
-}
-/* header */
-.e1_4 {
-  position: relative;
-  width: 1920px;
-  height: 70px;
-
-  background-color: #ffffff;
-}
-/* website name */
-.e1_7 {
-  position: absolute;
-  width: 198px;
-  height: 37px;
-  left: 20px;
-  top: 16px;
-  font-family: "Kumbh Sans";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 30px;
-  line-height: 37px;
-  color: #000000;
-  cursor: pointer;
-}
-
 /* main css code for borrowingDate.css */
-
 .e102_53 {
   overflow: hidden;
   background-color: rgba(255, 255, 255, 1);
@@ -125,18 +97,7 @@ body {
   font-size: 30px;
   letter-spacing: 0;
 }
-.e121_13 {
-  color: rgba(0, 0, 0, 1);
-  width: 24px;
-  height: 25px;
-  position: absolute;
-  left: 287px;
-  top: 310px;
-  font-family: Kumbh Sans;
-  text-align: center;
-  font-size: 20px;
-  letter-spacing: 0;
-}
+
 .e102_55 {
   color: rgba(0, 0, 0, 1);
   width: 236px;
@@ -173,6 +134,13 @@ body {
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
+  font-size: 25px;
+  text-align: center;
+  font-family: "Kumbh Sans";
+}
+.e102_75::-webkit-calendar-picker-indicator {
+  font-size: 15px;
+  padding-right: 20px;
 }
 .e102_76 {
   border: 1px solid rgba(0, 0, 0, 1);
@@ -185,6 +153,13 @@ body {
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
+  font-size: 25px;
+  text-align: center;
+  font-family: "Kumbh Sans";
+}
+.e102_76::-webkit-calendar-picker-indicator {
+  font-size: 15px;
+  padding-right: 20px;
 }
 .e102_59 {
   color: rgba(0, 0, 0, 1);
@@ -215,8 +190,8 @@ body {
   width: 289px;
   height: 185px;
   position: absolute;
-  left: 141px;
-  top: 265px;
+  left: 12%;
+  top: 5%;
   font-family: Kumbh Sans;
   text-align: left;
   font-size: 30px;
@@ -296,8 +271,8 @@ body {
   width: 36px;
   height: 37px;
   position: absolute;
-  left: 166px;
-  top: 418px;
+  left: 170px;
+  top: 422px;
   font-family: Kumbh Sans;
   text-align: center;
   font-size: 30px;
@@ -308,8 +283,8 @@ body {
   width: 28px;
   height: 37px;
   position: absolute;
-  left: 359px;
-  top: 418px;
+  left: 360px;
+  top: 422px;
   font-family: Kumbh Sans;
   text-align: center;
   font-size: 30px;
@@ -320,8 +295,8 @@ body {
   width: 34px;
   height: 37px;
   position: absolute;
-  left: 262px;
-  top: 418px;
+  left: 268px;
+  top: 422px;
   font-family: Kumbh Sans;
   text-align: center;
   font-size: 30px;
@@ -333,11 +308,18 @@ body {
   height: 37px;
   position: absolute;
   left: 141px;
-  top: 418px;
+  top: 423px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
+  font-size: 25px;
+  text-align: center;
+  font-family: "Kumbh Sans";
+}
+.e121_17::-webkit-inner-spin-button,
+.e121_17::-webkit-calendar-picker-indicator {
+  display: none;
 }
 .e121_18 {
   transform: rotate(90deg);
@@ -345,7 +327,7 @@ body {
   height: 0px;
   position: absolute;
   left: 323px;
-  top: 437px;
+  top: 441px;
   border: 1px solid rgba(0, 0, 0, 1);
 }
 .e121_19 {
@@ -354,7 +336,7 @@ body {
   height: 0px;
   position: absolute;
   left: 224px;
-  top: 437px;
+  top: 441px;
   border: 1px solid rgba(0, 0, 0, 1);
 }
 .e102_64 {
@@ -424,37 +406,11 @@ body {
   position: absolute;
   left: 935px;
   top: 393px;
-}
-.e121_7 {
-  width: 78px;
-  height: 25px;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-}
-.e121_10 {
-  width: 78px;
-  height: 25px;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-}
-.e121_11 {
-  width: 78px;
-  height: 25px;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-}
-.e121_12 {
   border: 1px solid rgba(0, 0, 0, 1);
-  width: 78px;
-  height: 25px;
-  position: absolute;
-  left: 0px;
-  top: 0px;
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
   border-bottom-left-radius: 40px;
   border-bottom-right-radius: 40px;
+  text-align: center;
+  font-size: 25px;
 }

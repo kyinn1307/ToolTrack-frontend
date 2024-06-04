@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import "../src/styles/SignUp.css";
+import Header from "./Header";
+import { useNavigate } from "react-router-dom";
 
 const SignUpPage = () => {
   const [studentId, setStudentId] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
-
+  const navigate = useNavigate();
   const handleSignUp = async (e) => {
     e.preventDefault();
 
@@ -37,18 +39,12 @@ const SignUpPage = () => {
       console.error("Error during sign up:", error);
     }
   };
-
+  const handleLoginButtonClick = () => {
+    navigate("/");
+  };
   return (
     <div>
-      <div className="e1_4">
-        <span className="e1_7" id="main-button">
-          ITM <b>ToolTrack</b>
-        </span>
-        <button type="button" className="e1_8" id="login-button">
-          login
-        </button>
-      </div>
-
+      <Header isLoggedIn={false} isAdmin={false} />{" "}
       <div className="e28_6">
         <form id="signup-form" onSubmit={handleSignUp}>
           <div className="e28_25">

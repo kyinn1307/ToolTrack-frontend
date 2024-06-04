@@ -1,6 +1,7 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "../src/styles/roomSelection.css";
+import Header from "./Header";
 
 const RoomSelectionPage = () => {
   const navigate = useNavigate();
@@ -8,29 +9,16 @@ const RoomSelectionPage = () => {
   const student = location.state?.student || {};
 
   const officeClick = () => {
-    navigate("/office");
+    navigate("/office", { state: { student } });
   };
 
   const studentRoomClick = () => {
-    navigate("/studentroom");
-  };
-
-  const handleAddItemClick = () => {
-    navigate("/additem", { state: { student } });
-  };
-
-  const handleRemoveItemClick = () => {
-    navigate("/removeitem", { state: { student } });
+    navigate("/studentroom", { state: { student } });
   };
 
   return (
     <div>
-      <div className="e1_4">
-        <span className="e1_7" id="main-button">
-          ITM <b>ToolTrack</b>
-        </span>
-      </div>
-
+      <Header isLoggedIn={true} isAdmin={student.isAdmin} />{" "}
       <div className="e5_74">
         <div className="e5_87" id="office-button" onClick={officeClick}>
           <div className="e5_96" id="office-onmouse"></div>
@@ -63,20 +51,6 @@ const RoomSelectionPage = () => {
           </div>
           <span className="e8_113">student room</span>
         </div>
-        {student.isAdmin && (
-          <div className="button-container">
-            <button type="button" className="e1_8" onClick={handleAddItemClick}>
-              Add Item
-            </button>
-            <button
-              type="button"
-              className="e1_8"
-              onClick={handleRemoveItemClick}
-            >
-              Remove Item
-            </button>
-          </div>
-        )}
       </div>
     </div>
   );

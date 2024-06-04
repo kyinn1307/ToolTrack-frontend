@@ -9,7 +9,7 @@ import StudentRoomPage from "./StudentRoomPage";
 import OfficePage from "./OfficePage";
 import BorrowingPage from "./BorrowingPage";
 import ItemBorrowingDatePage from "./ItemBorrowingDatePage";
-
+import UpdateItemPage from "./UpdateItem";
 const App = () => {
   return (
     <Router>
@@ -21,6 +21,7 @@ const App = () => {
         <Route path="/studentroom" element={<StudentRoomPage />} />
         <Route path="/additem" element={<AddItemPage />} />
         <Route path="/removeitem" element={<RemoveItemPage />} />
+        <Route path="/updateitem" element={<UpdateItemPage />} />
         <Route path="/borrowing/:item" element={<BorrowingPage />} />
         <Route
           path="/borrowing/date/:item"

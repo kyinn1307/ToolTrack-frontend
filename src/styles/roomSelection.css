@@ -1,38 +1,15 @@
-body {
-  background: #e5e5e5;
-}
-/* header */
-.e1_4 {
-  position: relative;
-  width: 1920px;
-  height: 70px;
-
-  background-color: #ffffff;
-}
-/* website name */
-.e1_7 {
-  position: absolute;
-  width: 198px;
-  height: 37px;
-  left: 20px;
-  top: 16px;
-  font-family: "Kumbh Sans";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 30px;
-  line-height: 37px;
-  color: #000000;
-  cursor: pointer;
-}
-
 /* main css in roomSelection.css */
 /* css for room selection */
 .e5_74 {
   overflow: hidden;
   background-color: rgba(255, 255, 255, 1);
-  width: 1920px;
+  width: 100%;
   height: 740px;
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 /* Original button styles */
@@ -45,8 +22,7 @@ body {
   border-radius: 20px;
   background-size: cover;
   background-position: center;
-  transition: background-color 0.3s, transform 0.3s;
-  position: absolute; /* Ensure that the pseudo-element is positioned relative to the button */
+  transition: transform 0.3s, border 0.3s;
   cursor: pointer;
 }
 
@@ -61,24 +37,19 @@ body {
 }
 
 /* Hover effects */
+.e5_87:hover,
+.e5_88:hover {
+  border: 3px solid #03d703; /* Green border on hover */
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
 .e5_87.hovered,
 .e5_88.hovered {
   background-color: rgba(0, 0, 0, 0.5); /* Darker background color on hover */
   cursor: pointer;
 }
 
-.e5_87.hovered::after,
-.e5_88.hovered::after {
-  position: absolute;
-  right: 10px; /* Position arrow to the right inside the button */
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 1.2em;
-  color: white;
-}
-.e5_87.hovered .e5_96 {
-  display: block;
-}
+.e5_87.hovered .e5_96,
 .e5_88.hovered .e5_97 {
   display: block;
 }
@@ -94,6 +65,7 @@ body {
   font-size: 20px;
   letter-spacing: 0;
 }
+
 .e5_90 {
   color: rgba(0, 0, 0, 1);
   width: 299px;
@@ -105,6 +77,7 @@ body {
   font-size: 50px;
   letter-spacing: 0;
 }
+
 .e5_95 {
   color: rgba(0, 0, 0, 1);
   width: 345px;
@@ -117,7 +90,6 @@ body {
   letter-spacing: 0;
 }
 
-/* css for sign up page */
 .e28_34 {
   color: rgba(0, 0, 0, 1);
   width: 244px;
@@ -129,6 +101,7 @@ body {
   font-size: 24px;
   letter-spacing: 0;
 }
+
 .e8_109 {
   width: 150px;
   height: 40px;
@@ -136,6 +109,7 @@ body {
   left: 977px;
   top: 560px;
 }
+
 .e8_108 {
   width: 150px;
   height: 40px;
@@ -143,6 +117,7 @@ body {
   left: 0px;
   top: 0px;
 }
+
 .e8_105 {
   background-color: rgba(
     190.0000038743019,
@@ -160,6 +135,7 @@ body {
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
+
 .e8_107 {
   color: rgba(255, 255, 255, 1);
   width: 52px;
@@ -172,6 +148,7 @@ body {
   font-size: 20px;
   letter-spacing: 0;
 }
+
 .e8_110 {
   width: 186px;
   height: 40px;
@@ -179,6 +156,7 @@ body {
   left: 1335px;
   top: 560px;
 }
+
 .e8_111 {
   width: 186px;
   height: 40px;
@@ -186,6 +164,7 @@ body {
   left: 0px;
   top: 0px;
 }
+
 .e8_112 {
   background-color: rgba(
     106.00000128149986,
@@ -203,6 +182,7 @@ body {
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
+
 .e8_113 {
   color: rgba(255, 255, 255, 1);
   width: 126px;
@@ -215,6 +195,7 @@ body {
   font-size: 20px;
   letter-spacing: 0;
 }
+
 .e32_81 {
   width: 78px;
   height: 25px;
@@ -222,6 +203,7 @@ body {
   left: 675px;
   top: 120px;
 }
+
 .e32_79 {
   color: rgba(0, 0, 0, 1);
   width: 50px;
@@ -234,6 +216,7 @@ body {
   font-size: 12px;
   letter-spacing: 0;
 }
+
 .e32_80 {
   border: 1px solid rgba(0, 0, 0, 1);
   width: 78px;
@@ -245,12 +228,6 @@ body {
   border-top-right-radius: 40px;
   border-bottom-left-radius: 40px;
   border-bottom-right-radius: 40px;
-}
-
-#office-button.hovered,
-#student-room-button.hovered {
-  background-color: #555; /* Darker background color on hover */
-  cursor: pointer;
 }
 
 .e5_96 {

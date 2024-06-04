@@ -1,19 +1,39 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
 import "../src/styles/borrowing.css";
+import Header from "./Header";
 
 const BorrowingPage = () => {
   const navigate = useNavigate();
   const { item } = useParams();
   const location = useLocation();
   const from = location.state?.from;
+  const student = location.state?.student || {};
+  const [items, setItems] = useState({});
+  const [studentId, setStudentId] = useState(student.studentId || "");
+  const roomId = from === "office" ? 502 : 302;
 
-  const items = {
-    calculator: 26,
-    blanket: 15,
-    earphone: 12,
-    ruler: 20,
-  };
+  useEffect(() => {
+    const fetchItems = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost:8000/get_items_by_room?roomId=${roomId}`
+        );
+        const data = await response.json();
+        console.log(data);
+        setItems(
+          data.reduce((acc, item) => {
+            acc[item.name.toLowerCase()] = item.amount;
+            return acc;
+          }, {})
+        );
+      } catch (error) {
+        console.error("Error fetching items:", error);
+      }
+    };
+
+    fetchItems();
+  }, [roomId]);
 
   const images = {
     calculator:
@@ -21,45 +41,60 @@ const BorrowingPage = () => {
     blanket: "https://gi.esmplus.com/untteutmax/webprogramming/blanket.jpeg",
     earphone: "https://gi.esmplus.com/untteutmax/webprogramming/earphone.jpeg",
     ruler: "https://gi.esmplus.com/untteutmax/webprogramming/ruler.jpeg",
+    medicine:
+      "https://gi.esmplus.com/untteutmax/webprogramming/preventiveMedicine.jpg",
+    tissue: "https://gi.esmplus.com/untteutmax/webprogramming/tissue.jpg",
   };
 
   const itemName = item ? item.charAt(0).toUpperCase() + item.slice(1) : "";
   const itemCount = item ? items[item] : 0;
   const itemImage = item ? images[item] : "";
 
-  const handleNavigation = (path, state) => {
-    navigate(path, { state });
-  };
-
   const handleBackClick = () => {
     if (from === "office") {
-      navigate("/office");
+      navigate("/office", { state: { student } });
     } else if (from === "studentroom") {
-      navigate("/studentroom");
+      navigate("/studentroom", { state: { student } });
     } else {
-      navigate("/roomselection");
+      navigate("/roomselection", { state: { student } });
     }
   };
 
-  const handleBorrowClick = () => {
-    handleNavigation(`/borrowing/date/${item}`, { from });
+  const handleBorrowClick = async () => {
+    const data = {
+      itemId: item,
+      studentId: studentId,
+      roomId: roomId,
+      itemName: itemName,
+    };
+
+    try {
+      const response = await fetch("http://localhost:8000/borrow/items", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        alert("Item borrowed successfully");
+      } else {
+        alert("Item couldn't be borrowed:");
+      }
+    } catch (error) {
+      alert("Error during item borrowing:");
+    }
   };
 
   return (
     <div>
-      <div className="e1_4">
-        <span
-          className="e1_7"
-          id="main-button"
-          onClick={() => handleNavigation("/roomselection")}
-        >
-          ITM <b>ToolTrack</b>
-        </span>
-      </div>
-
+      <Header isLoggedIn={true} isAdmin={student.isAdmin} />
       {item && (
         <div className="e102_2">
-          <span className="e102_3">Student’s office</span>
+          <span className="e102_3">
+            {from === "office" ? "Office" : "Student Room"}
+          </span>
           <span className="e102_6">{itemName}</span>
           <div
             className="e102_22"
@@ -69,7 +104,15 @@ const BorrowingPage = () => {
             <div className="e102_7"></div>
           </div>
           <div className="e102_25">
-            <img src={itemImage} alt={itemName} className="item-image" />
+            {itemCount > 0 ? (
+              <img
+                src={itemImage}
+                alt={item.charAt(0).toUpperCase() + item.slice(1)}
+                className="item-image"
+              />
+            ) : (
+              <div className="no-remaining">There are no remainings</div>
+            )}
           </div>
           <div className="e102_33">
             <span className="e102_36">{itemCount}</span>
@@ -78,7 +121,11 @@ const BorrowingPage = () => {
           <div
             className="e102_41"
             id="borrow-button"
-            onClick={handleBorrowClick}
+            onClick={itemCount > 0 ? handleBorrowClick : null}
+            style={{
+              opacity: itemCount > 0 ? 1 : 0.5,
+              cursor: itemCount > 0 ? "pointer" : "default",
+            }}
           >
             <span className="e102_38">
               <b>BORROW</b>

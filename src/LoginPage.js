@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../src/styles/login.css";
+import Header from "./Header"; // 헤더 컴포넌트 불러오기
 
 const LoginPage = () => {
   const [studentId, setStudentId] = useState("");
@@ -20,7 +21,7 @@ const LoginPage = () => {
   }, []);
 
   const handleSignUpClick = () => {
-    navigate("/signup"); // Use navigate to change the route
+    navigate("/signup");
   };
 
   const handleLoginClick = async (e) => {
@@ -40,17 +41,12 @@ const LoginPage = () => {
     } else if (!pwValue) {
       alert("Please enter your Password.");
     } else {
-      // const csrfToken = document.querySelector(
-      //   "input[name='csrfmiddlewaretoken']"
-      // ).value;
-
       const data = { studentId: idValue, password: pwValue };
       try {
         const response = await fetch("http://localhost:8000/login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            // "X-CSRFToken": csrfToken,
           },
           body: JSON.stringify(data),
         });
@@ -70,71 +66,70 @@ const LoginPage = () => {
   };
 
   return (
-    <div>
-      <div className="e1_4">
-        <span className="e1_7" id="main-button">
-          ITM <b>ToolTrack</b>
-        </span>
-        <button type="button" className="e1_8" id="login-button">
-          login
-        </button>
-      </div>
-
+    <div className="container">
+      <Header isLoggedIn={false} isAdmin={false} />{" "}
       <div className="e1_11">
         <span className="e1_14">
           Welcome to ITM <b>ToolTrack</b>!
         </span>
-        <span className="e1_16">ID </span>
-        <span className="e1_17">PW </span>
-        <div className="e1_27">
-          <button
-            type="button"
-            className="e1_30"
-            id="sign-up-button"
-            onClick={handleSignUpClick}
-          >
-            sign-up
-          </button>
-        </div>
-        <div className="e1_29">
-          <input
-            type="submit"
-            className="e1_31"
-            id="login-form-submit"
-            value="log-in"
-            onClick={handleLoginClick} // Added onClick event to handle login
-          />
+
+        <div>
+          <div className="e1_27">
+            <button
+              type="button"
+              className="e1_30"
+              id="sign-up-button"
+              onClick={handleSignUpClick}
+            >
+              sign-up
+            </button>
+          </div>
+          <div className="e1_29">
+            <input
+              type="submit"
+              className="e1_31"
+              id="login-form-submit"
+              value="log-in"
+              onClick={handleLoginClick}
+            />
+          </div>
         </div>
         <div className="e1_20">
           <div className="e1_18"></div>
           <span className="e1_19">only for ITM students</span>
         </div>
         <form className="e1_12" id="login-form" method="POST">
+          <div className="ID_class">
+            <span className="e1_16">ID </span>{" "}
+            <input
+              type="text"
+              className="e1_21"
+              name="ID"
+              placeholder="Student Number"
+              maxLength="8"
+              required
+              value={studentId}
+              onChange={(e) => setStudentId(e.target.value)}
+            />
+          </div>
           <input
             type="hidden"
             name="csrfmiddlewaretoken"
             value="{{ csrf_token }}"
           />
-          <input
-            type="text"
-            className="e1_21"
-            name="ID"
-            placeholder="Student Number"
-            maxLength="8"
-            required
-            value={studentId}
-            onChange={(e) => setStudentId(e.target.value)} // Added onChange event to update state
-          />
-          <input
-            type="password"
-            className="e1_26"
-            name="Password"
-            placeholder="PW"
-            maxLength="20"
-            required
-            value={password}
-            onChange={(e) => setPassword(e.target.value)} // Added onChange event to update state
-          />
+          <div className="PW_class">
+            <span className="e1_17">PW </span>
+            <input
+              type="password"
+              className="e1_26"
+              name="Password"
+              placeholder="PW"
+              maxLength="20"
+              required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
         </form>
       </div>
     </div>
