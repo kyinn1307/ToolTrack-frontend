@@ -78,18 +78,18 @@ const BorrowingPage = () => {
       });
 
       if (response.ok) {
-        console.log("Item borrowed successfully");
+        alert("Item borrowed successfully");
       } else {
-        console.error("Failed to borrow item:", response.statusText);
+        alert("Item couldn't be borrowed:");
       }
     } catch (error) {
-      console.error("Error during item borrowing:", error);
+      alert("Error during item borrowing:");
     }
   };
 
   return (
     <div>
-      <Header isLoggedIn={true} />
+      <Header isLoggedIn={true} isAdmin={student.isAdmin} />
       {item && (
         <div className="e102_2">
           <span className="e102_3">

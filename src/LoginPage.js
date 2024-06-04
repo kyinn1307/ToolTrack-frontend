@@ -67,7 +67,7 @@ const LoginPage = () => {
 
   return (
     <div className="container">
-      <Header isLoggedIn={false} />{" "}
+      <Header isLoggedIn={false} isAdmin={false} />{" "}
       <div className="e1_11">
         <span className="e1_14">
           Welcome to ITM <b>ToolTrack</b>!

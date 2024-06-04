@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import "../src/styles/update.css";
 
 const UpdateItemPage = () => {
-  const [itemId, setItemId] = useState("");
+  const [name, setName] = useState("");
   const [roomId, setRoomId] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
@@ -16,7 +16,7 @@ const UpdateItemPage = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:8000/items/update/${itemId}`,
+        `http://localhost:8000/items/update/${name}`,
         {
           method: "PUT",
           headers: {
@@ -27,39 +27,38 @@ const UpdateItemPage = () => {
       );
 
       if (response.ok) {
-        console.log("Item updated successfully");
+        alert("Item updated successfully");
         navigate("/roomselection", { state: { student } });
       } else {
+        alert("Couldn't update item");
         console.error("Failed to update item:", response.statusText);
       }
     } catch (error) {
+      alert("Error during item update");
       console.error("Error during item update:", error);
     }
   };
 
   return (
-    <div class="e232_341">
-      <div class="e290_26"></div>
-      <span class="e232_342">Which tool do you want to update?</span>
-      <span class="e232_343">Updating page</span>
-      <span class="e232_344">only for administrators</span>
-      <div class="e232_345"></div>
-      <div class="e232_346"></div>
-      <div class="e232_348">
-        <span class="e232_349">Tool</span>
-        <span class="e232_351">Room</span>
-      </div>
-      <div class="e232_352"></div>
-      <div class="e232_353">
-        <span class="e232_354">Select Tool</span>
-        <span class="e232_356">Select Room</span>
-      </div>
-      <div class="e232_359">
-        <div class="e232_360">
-          <div class="e232_361"></div>
-          <span class="e232_362">UPDATE</span>
-        </div>
-      </div>
+    <div className="update-item-container">
+      <h1>Update Item</h1>
+      <form onSubmit={handleUpdateItem}>
+        <input
+          type="text"
+          placeholder="Item name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+        />
+        <input
+          type="text"
+          placeholder="New Room ID"
+          value={roomId}
+          onChange={(e) => setRoomId(e.target.value)}
+          required
+        />
+        <button type="submit">Update Item</button>
+      </form>
     </div>
   );
 };

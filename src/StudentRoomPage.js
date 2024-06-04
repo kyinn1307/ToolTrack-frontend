@@ -44,7 +44,10 @@ const StudentRoomPage = () => {
 
   return (
     <div className="e1_1">
-      <Header isLoggedIn={true} /*onLogoutClick={handleLogoutClick}*/ />{" "}
+      <Header
+        isLoggedIn={true}
+        isAdmin={student.isAdmin} /*onLogoutClick={handleLogoutClick}*/
+      />{" "}
       <div className="e28_45">
         <div className="e28_46"></div>
         <div

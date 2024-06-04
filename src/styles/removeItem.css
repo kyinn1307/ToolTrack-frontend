@@ -1,0 +1,48 @@
+.remove-item-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.remove-item-container h1 {
+  text-align: center;
+  color: #333;
+  font-family: "Kumbh Sans", sans-serif;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.remove-item-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.remove-item-container input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+.remove-item-container button {
+  padding: 10px 20px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 18px;
+  font-family: "Kumbh Sans", sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.remove-item-container button:hover {
+  background-color: #c82333;
+}

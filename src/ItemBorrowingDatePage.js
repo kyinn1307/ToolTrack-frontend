@@ -8,6 +8,8 @@ const ItemBorrowingDatePage = () => {
   const { item } = useParams();
   const location = useLocation();
   const from = location.state?.from;
+  const student = location.state?.student || {};
+
   const [value, setValue] = useState("0");
   const [borrowingDate, setBorrowingDate] = useState(() => {
     const today = new Date();
@@ -84,7 +86,10 @@ const ItemBorrowingDatePage = () => {
 
   return (
     <div>
-      <Header isLoggedIn={true} /*onLogoutClick={handleLogoutClick}*/ />{" "}
+      <Header
+        isLoggedIn={true}
+        isAdmin={student.isAdmin} /*onLogoutClick={handleLogoutClick}*/
+      />{" "}
       <div className="e102_53">
         <div className="e174_9">
           <span className="e102_54">

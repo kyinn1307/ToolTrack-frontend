@@ -44,7 +44,7 @@ const SignUpPage = () => {
   };
   return (
     <div>
-      <Header isLoggedIn={false} onLoginClick={handleLoginButtonClick} />{" "}
+      <Header isLoggedIn={false} isAdmin={false} />{" "}
       <div className="e28_6">
         <form id="signup-form" onSubmit={handleSignUp}>
           <div className="e28_25">

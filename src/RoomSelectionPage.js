@@ -16,17 +16,9 @@ const RoomSelectionPage = () => {
     navigate("/studentroom", { state: { student } });
   };
 
-  const handleAddItemClick = () => {
-    navigate("/additem", { state: { student } });
-  };
-
-  const handleRemoveItemClick = () => {
-    navigate("/removeitem", { state: { student } });
-  };
-
   return (
     <div>
-      <Header isLoggedIn={true} /*onLogoutClick={handleLogoutClick}*/ />{" "}
+      <Header isLoggedIn={true} isAdmin={student.isAdmin} />{" "}
       <div className="e5_74">
         <div className="e5_87" id="office-button" onClick={officeClick}>
           <div className="e5_96" id="office-onmouse"></div>

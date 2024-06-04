@@ -26,12 +26,6 @@ const OfficePage = () => {
     images.length - 1
   );
 
-  const items = {
-    calculator: 26,
-    blanket: 10,
-    medicine: 15,
-  };
-
   const handleBackButtonClick = () => {
     navigate("/roomselection", { state: { student } });
   };
@@ -50,7 +44,7 @@ const OfficePage = () => {
 
   return (
     <div>
-      <Header isLoggedIn={true} /*onLogoutClick={handleLogoutClick}*/ />{" "}
+      <Header isLoggedIn={true} isAdmin={student.isAdmin} />{" "}
       <div className="e19_14">
         <div className="e19_15"></div>
         <div
